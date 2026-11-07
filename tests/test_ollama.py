@@ -31,20 +31,12 @@ def test_ollama_transport_runs_real_maf_tool_loop_and_structured_final(tmp_path)
                 receipt = json.loads(
                     next(m["content"] for m in reversed(payload["messages"]) if m["role"] == "tool")
                 )
-                if role == "retrieval":
-                    assessment = dict(
-                        disposition="proceed", reason_code="ready", rationale="Test transport only"
-                    )
-                    assert "handoff" not in receipt
-                    assert all(not isinstance(v, (list, dict)) for v in receipt.values())
-                else:
-                    assessment = dict(
-                        receipt=receipt["receipt"],
-                        disposition="proceed",
-                        rationale="Test transport only",
-                        citations=receipt["handoff"]["source_references"][:1],
-                        match_suggestions=[],
-                    )
+                assessment = dict(
+                    reason_code="ready_for_approval" if role == "recommendation" else "ready",
+                    rationale="Test transport only",
+                )
+                assert "handoff" not in receipt
+                assert all(not isinstance(v, (list, dict)) for v in receipt.values())
                 message = {"content": json.dumps(assessment)}
             return httpx.Response(200, json={"done": True, "done_reason": "stop", "message": message})
 

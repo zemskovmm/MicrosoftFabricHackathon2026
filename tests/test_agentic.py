@@ -46,46 +46,55 @@ class SimulatedModel(FunctionInvocationLayer, BaseChatClient):
                 receipt = json.loads(receipt["text"])
         else:
             receipt = {"receipt": "0" * 64, "handoff": {"source_references": ["invented"]}}
-        if self.role == "retrieval" and not self.skip_tool:
-            reason = (
-                "no_usable_data"
-                if receipt["accepted_records"] == 0
-                else "partial_scope"
-                if receipt["quarantined_records"]
-                else "ready"
-            )
-            assessment = dict(
-                disposition="request_review" if reason == "no_usable_data" else "proceed",
-                reason_code=reason,
-                rationale="Simulated readiness decision",
-            )
-            if self.fabricate:
-                assessment["receipt"] = "0" * 64
+        if self.skip_tool:
+            assessment = {"reason_code": "ready", "rationale": "Skipped tool"}
         else:
-            assessment = dict(
-                receipt="0" * 64 if self.fabricate else receipt["receipt"],
-                disposition="request_review" if self.review else "proceed",
-                rationale="Simulated model inspection; not live Azure evidence.",
-                citations=receipt["handoff"]["source_references"][:1],
-                match_suggestions=[],
-            )
-        if self.suggest:
-            uncertain = [r for r in receipt["handoff"]["payload"]["crosswalk"] if not r["canonical_sku"]]
-            assessment["match_suggestions"] = [
-                dict(
-                    source_reference=uncertain[0]["source_reference"],
-                    canonical_sku="PART-001",
-                    confidence=0.5,
-                    reason="Human investigation required",
+            if self.role == "retrieval":
+                code = (
+                    "no_usable_data"
+                    if receipt["accepted_records"] == 0
+                    else "partial_scope"
+                    if receipt["quarantined_records"]
+                    else "ready"
                 )
-            ]
+            elif self.role == "sku-matching":
+                code = (
+                    "unresolved_identity"
+                    if receipt["unresolved_records"]
+                    else "no_matched_data"
+                    if not receipt["matched_records"]
+                    else "ready"
+                )
+            elif self.role == "eo-calculation":
+                code = (
+                    "no_positions"
+                    if not receipt["positions_count"]
+                    else "baseline_not_comparable"
+                    if not receipt["baseline_comparable"]
+                    else "reconciliation_difference"
+                    if receipt["absolute_variance"] not in ("0", "0.00")
+                    else "ready"
+                )
+            else:
+                code = (
+                    "approval_boundary_violation"
+                    if receipt["nonpending_proposals"] or receipt["realized_before_execution"]
+                    else "ready_for_approval"
+                    if receipt["proposal_count"]
+                    else "no_action_required"
+                )
+            assessment = dict(reason_code=code, rationale="Simulated stage decision; not live model evidence")
+        if self.fabricate:
+            assessment["receipt"] = "0" * 64
+        if self.suggest:
+            assessment["match_suggestions"] = [{"canonical_sku": "INVENTED"}]
         return ChatResponse(messages=Message("assistant", [json.dumps(assessment)]))
 
 
 @pytest.fixture
 def runtime(tmp_path):
     pack = tmp_path / "pack"
-    generate(pack)
+    generate(pack, include_exceptions=False)
     return Runtime(data=pack, cutoff=date(2026, 10, 31), provider="simulated_model")
 
 
@@ -112,6 +121,7 @@ def test_real_maf_graph_four_tool_calling_agents(runtime):
 
 
 def test_review_request_stops_downstream_tools(runtime):
+    generate(runtime.data, include_exceptions=True)
     outcome = asyncio.run(
         run_workflow(runtime, lambda role: SimulatedModel(role, review=role == "sku-matching"))
     )
@@ -129,13 +139,13 @@ def test_agent_cannot_skip_tools_or_fabricate_receipts(runtime):
         assert len(runtime.trace) == 0
 
 
-def test_model_match_suggestions_always_require_human_review(runtime):
-    outcome = asyncio.run(
-        run_workflow(runtime, lambda role: SimulatedModel(role, suggest=role == "sku-matching"))
-    )
-    assert outcome.status == "review_required"
+def test_model_cannot_generate_match_suggestions_outside_its_flat_contract(runtime):
+    from pydantic import ValidationError
+
+    with pytest.raises(ValidationError):
+        asyncio.run(run_workflow(runtime, lambda role: SimulatedModel(role, suggest=role == "sku-matching")))
     assert runtime.analysis.phase == 2
-    assert any(r["canonical_sku"] is None for r in runtime.analysis.crosswalk)
+    assert len(runtime.trace) == 1
 
 
 def test_stage_tool_retries_are_idempotent_and_out_of_order_calls_fail(runtime):

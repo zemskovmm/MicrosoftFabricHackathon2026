@@ -1,0 +1,26 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reason_code": {
+      "enum": [
+        "ready",
+        "unresolved_identity",
+        "no_matched_data"
+      ],
+      "title": "Reason Code",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reason_code",
+    "rationale"
+  ],
+  "title": "MatchingDecision",
+  "type": "object"
+}

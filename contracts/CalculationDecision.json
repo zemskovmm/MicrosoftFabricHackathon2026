@@ -1,0 +1,27 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reason_code": {
+      "enum": [
+        "ready",
+        "no_positions",
+        "baseline_not_comparable",
+        "reconciliation_difference"
+      ],
+      "title": "Reason Code",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reason_code",
+    "rationale"
+  ],
+  "title": "CalculationDecision",
+  "type": "object"
+}

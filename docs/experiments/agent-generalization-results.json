@@ -1,0 +1,223 @@
+{
+  "date": "2026-11-07",
+  "model": {
+    "name": "gpt-oss:latest",
+    "model": "gpt-oss:latest",
+    "modified_at": "2026-11-07T13:42:12.008893837+01:00",
+    "size": 13793441566,
+    "digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+    "details": {
+      "parent_model": "dhiltgen/gpt-oss:20b-llamacpp",
+      "format": "gguf",
+      "family": "gpt-oss",
+      "families": [
+        "gpt-oss"
+      ],
+      "parameter_size": "20.9B",
+      "quantization_level": "MXFP4",
+      "context_length": 131072,
+      "embedding_length": 2880,
+      "runner": "llamacpp"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "protocol": "One isolated Microsoft Agent Framework model agent per case. Deterministic prerequisite stages. No weight training, no reused conversation context. No prompt changes after first holdout request.",
+  "roles": {
+    "retrieval": {
+      "baseline_development_passed": 2,
+      "development_passed": 3,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "cases": [
+        {
+          "case": "holdout/retrieval/clean",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/retrieval/partial_input",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "partial_scope",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/retrieval/empty_input",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "no_usable_data",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/retrieval/renamed_permuted",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        }
+      ]
+    },
+    "sku-matching": {
+      "baseline_development_passed": 1,
+      "development_passed": 2,
+      "holdout_passed": 3,
+      "holdout_total": 3,
+      "cases": [
+        {
+          "case": "holdout/sku-matching/clean",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/sku-matching/unknown_identity",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "unresolved_identity",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/sku-matching/renamed_permuted",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        }
+      ]
+    },
+    "eo-calculation": {
+      "baseline_development_passed": 1,
+      "development_passed": 3,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "cases": [
+        {
+          "case": "holdout/eo-calculation/clean",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/eo-calculation/different_cutoff",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "baseline_not_comparable",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/eo-calculation/different_total",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "reconciliation_difference",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/eo-calculation/renamed_permuted",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready",
+          "model_calls": 2,
+          "error": null
+        }
+      ]
+    },
+    "recommendation": {
+      "baseline_development_passed": 0,
+      "development_passed": 2,
+      "holdout_passed": 4,
+      "holdout_total": 4,
+      "cases": [
+        {
+          "case": "holdout/recommendation/clean",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready_for_approval",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/recommendation/self_approved",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "approval_boundary_violation",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/recommendation/realized_before_execution",
+          "passed": true,
+          "expected": "request_review",
+          "reason_code": "approval_boundary_violation",
+          "model_calls": 2,
+          "error": null
+        },
+        {
+          "case": "holdout/recommendation/renamed_permuted",
+          "passed": true,
+          "expected": "proceed",
+          "reason_code": "ready_for_approval",
+          "model_calls": 2,
+          "error": null
+        }
+      ]
+    }
+  },
+  "agent_holdout_passed": 15,
+  "agent_holdout_total": 15,
+  "documents": {
+    "development_passed": 2,
+    "development_total": 2,
+    "holdout_passed": 2,
+    "holdout_total": 3,
+    "failure": {
+      "case": "reordered_table",
+      "mismatches": [
+        "supplier_name"
+      ],
+      "expected_supplier": "Orbit Calibration Ltd [West]",
+      "actual_supplier": "Orbit Calibration Ltd",
+      "status": "open_generalization_failure_not_tuned_on_holdout"
+    }
+  },
+  "frozen_source": {
+    "agentic.py": "427bb779684d6ac2a583758e5b8eddb17b08d1acf7b4ea151181028f19fbb801",
+    "ollama_clients.py": "4a1ec0a245b6610f72f726cf612beeaca39044103c8e38095155183754af8754",
+    "matching.py": "41192c0e00dfc87748816ee5cceed6688e04dbd2409b1b0f49878a4c31e5485c",
+    "engine.py": "8a26e0283e75bfcd20f665de67a7edb9049fcff96a2c9be684f3ed51c1d46b48",
+    "supplier_ingestion.py": "3fc4c985615a0b127ca8718dcf709941ff16c8ea566553cfce03c9d104ce8599"
+  },
+  "agent_source_unchanged": true,
+  "document_source_unchanged": true,
+  "preregistration": {
+    "protocol_sha256": "9b1de2bc0e0afb9d6adcc62d46875b33ab8a4576c68c4133e679d4dd2ee5d70e",
+    "holdout_opened": false
+  },
+  "limits": [
+    "Small synthetic holdout; cannot prove absence of prompt overfitting or distribution shift.",
+    "The four agent checks assess tool invocation and bounded readiness/safety reviews, not autonomous SKU discovery or LLM arithmetic.",
+    "One document identity-preservation failure remains. Do not reuse this holdout for tuning.",
+    "Model transport is real local Ollama; Fabric/Entra/Agent 365 not exercised."
+  ],
+  "artifacts": {
+    "agents": "output/experiments/generalization-v2-holdout",
+    "documents": "output/experiments/document-generalization-holdout"
+  }
+}

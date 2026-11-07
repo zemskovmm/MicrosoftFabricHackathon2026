@@ -54,7 +54,7 @@ Open http://127.0.0.1:8000. The model must already appear in Ollama's installed-
 
 The clean sample is generated explicitly for the complete workflow demonstration. The default sample retains intentional bad records and may correctly stop for review. If any agent requests review, later stages are not executed and no completed run is saved. The 50 supplier files remain a separate extraction demo; this command exercises the 24-SKU arithmetic fixture.
 
-The first-agent prompt and flat output contracts were tested against a real local `gpt-oss:latest` server. See [experiment results](docs/retrieval-gptoss-experiment.md). Retrieval decisions have three scalar fields; supplier offers have nine. Application-generated source evidence and collections are kept outside the required LLM response.
+The first-agent prompt and flat output contracts were tested against a real local `gpt-oss:latest` server. See [experiment results](docs/retrieval-gptoss-experiment.md). Stage decisions now have two scalar fields (reason_code and rationale); supplier offers have nine. Application-generated source evidence and collections are kept outside the required LLM response. [Isolated generalization tests](docs/agent-generalization-experiment.md) passed 15/15 stage holdout cases; supplier extraction passed 2/3 heldout documents, with one supplier qualifier omission left open rather than tuned on the holdout.
 
 ## Sample data and policy
 

@@ -1,14 +1,6 @@
 {
   "additionalProperties": false,
   "properties": {
-    "disposition": {
-      "enum": [
-        "proceed",
-        "request_review"
-      ],
-      "title": "Disposition",
-      "type": "string"
-    },
     "reason_code": {
       "enum": [
         "ready",
@@ -26,7 +18,6 @@
     }
   },
   "required": [
-    "disposition",
     "reason_code",
     "rationale"
   ],

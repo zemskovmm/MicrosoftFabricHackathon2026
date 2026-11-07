@@ -1,0 +1,26 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "reason_code": {
+      "enum": [
+        "ready_for_approval",
+        "no_action_required",
+        "approval_boundary_violation"
+      ],
+      "title": "Reason Code",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "reason_code",
+    "rationale"
+  ],
+  "title": "RecommendationDecision",
+  "type": "object"
+}

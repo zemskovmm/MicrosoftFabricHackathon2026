@@ -29,7 +29,7 @@ Outcomes: `review_required` stops the graph; `awaiting_human_approval` saves the
 
 ## First-agent output contract
 
-Retrieval returns only `disposition`, `reason_code`, `rationale`; source evidence is attached by the application. Supplier extraction frames individual Markdown product sections and requests nine scalar fields per call; unit counts, quotes, hashes and result arrays are assembled by code. See `docs/retrieval-gptoss-experiment.md` for the real GPT-OSS experiment and its limits. Agents 2–4 retain their existing contracts.
+All four stage models now return only `reason_code` and `rationale`; the application derives continue/stop and binds source evidence. Supplier extraction frames individual Markdown product sections and requests nine scalar fields per call; unit counts, quotes, hashes and result arrays are assembled by code. See `docs/agent-generalization-experiment.md` for isolated real GPT-OSS tests, independent holdouts and an open supplier-name generalization failure. Earlier first-agent experiments are retained as history in `docs/retrieval-gptoss-experiment.md`.
 
 ## Local Ollama
 

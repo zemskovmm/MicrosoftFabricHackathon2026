@@ -3,7 +3,13 @@ from datetime import date
 import pytest
 from pydantic import ValidationError
 
-from inventorypulse.agentic import RetrievalDecision, Runtime, retrieval_facts, validate_retrieval_decision
+from inventorypulse.agentic import (
+    DECISION_MODELS,
+    RetrievalDecision,
+    Runtime,
+    retrieval_facts,
+    validate_retrieval_decision,
+)
 from inventorypulse.sample import generate
 from inventorypulse.supplier_ingestion import FlatSupplierOffer, pack_count_from_unit, product_sections
 
@@ -15,13 +21,13 @@ def test_first_agent_llm_schemas_have_no_arrays_or_nested_objects():
         for prop in schema["properties"].values():
             variants = prop.get("anyOf", [prop])
             assert all(v.get("type") not in {"object", "array"} for v in variants)
-    assert len(RetrievalDecision.model_fields) == 3
+    assert len(RetrievalDecision.model_fields) == 2
 
 
 def test_retrieval_cannot_smuggle_matching_suggestions_or_unsafe_proceed():
     with pytest.raises(ValidationError):
-        RetrievalDecision(disposition="proceed", reason_code="ready", rationale="ready", match_suggestions=[])
-    decision = RetrievalDecision(disposition="proceed", reason_code="ready", rationale="ready")
+        RetrievalDecision(reason_code="ready", rationale="ready", match_suggestions=[])
+    decision = RetrievalDecision(reason_code="ready", rationale="ready")
     with pytest.raises(ValueError, match="contradicts"):
         validate_retrieval_decision(decision, {"accepted_records": 0, "quarantined_records": 48})
 
@@ -35,9 +41,7 @@ def test_retrieval_facts_are_flat_and_zero_rows_stop(tmp_path):
     assert facts["accepted_records"] == 0
     assert facts["quarantined_records"] == 48
     assert all(not isinstance(v, (dict, list)) for v in facts.values())
-    decision = RetrievalDecision(
-        disposition="request_review", reason_code="no_usable_data", rationale="No usable rows"
-    )
+    decision = RetrievalDecision(reason_code="no_usable_data", rationale="No usable rows")
     validate_retrieval_decision(decision, facts)
 
 
@@ -74,3 +78,31 @@ def test_flat_offer_has_only_nine_llm_fields_and_no_derived_pack_or_quote():
     assert len(FlatSupplierOffer.model_fields) == 9
     assert "pack_count" not in FlatSupplierOffer.model_fields
     assert "source_quote" not in FlatSupplierOffer.model_fields
+
+
+def test_all_stage_decisions_are_two_scalar_fields():
+    for model in DECISION_MODELS.values():
+        assert list(model.model_fields) == ["reason_code", "rationale"]
+        schema = model.model_json_schema()
+        assert "$defs" not in schema
+        assert all(p["type"] == "string" for p in schema["properties"].values())
+
+
+def test_prompts_do_not_contain_benchmark_entities_or_fixed_answers():
+    from inventorypulse.agentic import role_instructions
+    from inventorypulse.supplier_ingestion import EXTRACTION_INSTRUCTIONS
+
+    forbidden = (
+        "PART-001",
+        "Northline",
+        "Generic (synthetic)",
+        "WORKSHOP-",
+        "OBSERVATORY-",
+        "Copperfield",
+        "Lumen Optics",
+        "Orbit Calibration",
+        "Sunridge",
+        "Tidal Pumping",
+    )
+    for prompt in [role_instructions(role) for role in DECISION_MODELS] + [EXTRACTION_INSTRUCTIONS]:
+        assert not any(token in prompt for token in forbidden)

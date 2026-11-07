@@ -16,3 +16,7 @@ Focused intent review: the implemented graph enforces stage order, source citati
 ## First-agent GPT-OSS experiment
 
 Real local gpt-oss:latest experiment: six readiness runs passed; all 50 supplier documents (100 offers) processed, four model-field failures corrected and rechecked within seven document rechecks; one injected-instruction document and a two-holding vendor-linked retrieval check passed. See `retrieval-gptoss-experiment.md` and `experiments/retrieval-gptoss-results.json` for exact scope and assembly history. Retrieval LLM output now has three scalar fields; per-offer LLM extraction has nine. Application evidence/collections remain separate. Regression suite: 30 passed.
+
+## Isolated-agent generalization experiment
+
+Each of the four agents was tested separately on local gpt-oss:latest, with deterministic prerequisites and fresh model contexts. After 10/10 development checks, frozen prompts/code passed 15/15 first-pass heldout stage cases. Separate supplier extraction passed 2/3 disjoint heldout documents; a dropped regional qualifier in supplier_name remains open and was not fixed against the revealed holdout. See `agent-generalization-experiment.md`. Current stage LLM responses have two scalar fields; regression suite: 32 passed.

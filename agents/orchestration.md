@@ -2,7 +2,7 @@
 
 `inventorypulse.agentic.build_workflow` creates four Microsoft Agent Framework `Agent` instances in typed `Executor` nodes connected by `WorkflowBuilder`: retrieval → SKU matching → E&O calculation → recommendation.
 
-Each agent invokes only its bounded deterministic stage tool. Retrieval returns three scalar fields (disposition, reason_code, rationale); its receipt and sources are attached by code. Subsequent agents return a validated Assessment acknowledging their exact receipt and source citations. A skipped tool, changed receipt, bad citation, timeout or invalid response stops execution. SKU suggestions and review requests stop downstream stages; suggestions never mutate the accepted crosswalk. Complete runs await the existing human approval API/CLI; agents have no approval or ERP execution tool.
+Each agent invokes only its bounded deterministic stage tool. Every stage model returns two scalar fields: `reason_code` and `rationale`. The application derives continue/stop from the reason and verifies it against the authoritative facts, attaching source references and receipts itself. Unresolved product identities, missing/mismatched reconciliation and violated approval boundaries stop the graph. No model-generated candidate mappings are accepted. See `docs/agent-generalization-experiment.md` for isolated live tests and the untouched heldout result.
 
 `inventorypulse.engine.Analysis` exposes separate stage methods, reused by the offline `run_pack` baseline. It does not execute the whole pipeline behind each agent. Agents never receive offline expected-match labels. Each workflow invocation uses a distinct ID; tool retries within that invocation are idempotent. Do not reuse a Runtime across concurrent sessions.
 

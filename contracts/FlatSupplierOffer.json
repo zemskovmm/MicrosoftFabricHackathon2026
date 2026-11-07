@@ -1,0 +1,86 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "supplier_name": {
+      "minLength": 1,
+      "title": "Supplier Name",
+      "type": "string"
+    },
+    "source_sku": {
+      "minLength": 1,
+      "title": "Source Sku",
+      "type": "string"
+    },
+    "manufacturer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Manufacturer"
+    },
+    "manufacturer_part_number": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Manufacturer Part Number"
+    },
+    "description": {
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "unit_description": {
+      "minLength": 1,
+      "title": "Unit Description",
+      "type": "string"
+    },
+    "price_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Price Text"
+    },
+    "currency": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Currency"
+    },
+    "warning": {
+      "title": "Warning",
+      "type": "string"
+    }
+  },
+  "required": [
+    "supplier_name",
+    "source_sku",
+    "manufacturer",
+    "manufacturer_part_number",
+    "description",
+    "unit_description",
+    "price_text",
+    "currency",
+    "warning"
+  ],
+  "title": "FlatSupplierOffer",
+  "type": "object"
+}

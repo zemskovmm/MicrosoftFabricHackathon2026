@@ -12,3 +12,7 @@ Scope: InventoryPulse four-agent Microsoft Agent Framework graph, supplier docum
 - Separate Entra identities, Agent 365 audit, Power BI, Activator and Teams delivery: not verified in a tenant.
 
 Focused intent review: the implemented graph enforces stage order, source citations, exact tool receipts and human-only decisions. SKU suggestions stop for human review. Local evidence matches these contracts; live deployment acceptance remains unverified. No `.idd/engineering/` layer is present.
+
+## First-agent GPT-OSS experiment
+
+Real local gpt-oss:latest experiment: six readiness runs passed; all 50 supplier documents (100 offers) processed, four model-field failures corrected and rechecked within seven document rechecks; one injected-instruction document and a two-holding vendor-linked retrieval check passed. See `retrieval-gptoss-experiment.md` and `experiments/retrieval-gptoss-results.json` for exact scope and assembly history. Retrieval LLM output now has three scalar fields; per-offer LLM extraction has nine. Application evidence/collections remain separate. Regression suite: 30 passed.

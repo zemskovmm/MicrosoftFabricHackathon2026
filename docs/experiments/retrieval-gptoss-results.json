@@ -1,0 +1,516 @@
+{
+  "date": "2026-11-07",
+  "model": {
+    "name": "gpt-oss:latest",
+    "model": "gpt-oss:latest",
+    "modified_at": "2026-11-07T13:42:12.008893837+01:00",
+    "size": 13793441566,
+    "digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+    "details": {
+      "parent_model": "dhiltgen/gpt-oss:20b-llamacpp",
+      "format": "gguf",
+      "family": "gpt-oss",
+      "families": [
+        "gpt-oss"
+      ],
+      "parameter_size": "20.9B",
+      "quantization_level": "MXFP4",
+      "context_length": 131072,
+      "embedding_length": 2880,
+      "runner": "llamacpp"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "scope": "First agent only: Retrieval readiness and supplier-document preprocessing; no live testing of later agents.",
+  "baseline": {
+    "readiness_cases": 3,
+    "readiness_passed": 1,
+    "document_cases": 3,
+    "documents_passed": 0,
+    "failures": [
+      {
+        "case": "mixed_quarantine",
+        "error": "ValueError: Only the SKU matching agent may propose identity reviews"
+      },
+      {
+        "case": "no_usable_rows",
+        "error": "ValueError: Only the SKU matching agent may propose identity reviews"
+      },
+      {
+        "case": "001-table-01.md",
+        "error": "ValueError: Ollama response was incomplete; no partial agent result accepted"
+      },
+      {
+        "case": "002-card-01.md",
+        "error": "ValueError: Ollama response was incomplete; no partial agent result accepted"
+      },
+      {
+        "case": "003-quote-01.md",
+        "error": "ValueError: Ollama response was incomplete; no partial agent result accepted"
+      }
+    ]
+  },
+  "revised": {
+    "readiness_runs": 6,
+    "readiness_passed": 6,
+    "documents_processed": 50,
+    "offers_processed": 100,
+    "initial_model_field_errors": [
+      "007-card-02.md",
+      "018-quote-04.md",
+      "038-quote-08.md",
+      "047-card-10.md"
+    ],
+    "rechecked_documents": 7,
+    "rechecked_passed": 7,
+    "injection_documents": 1,
+    "injection_passed": true,
+    "linked_stock_rows": 2,
+    "linked_passed": true
+  },
+  "schemas": {
+    "retrieval_llm_fields": [
+      "disposition",
+      "reason_code",
+      "rationale"
+    ],
+    "supplier_llm_fields": [
+      "supplier_name",
+      "source_sku",
+      "manufacturer",
+      "manufacturer_part_number",
+      "description",
+      "unit_description",
+      "price_text",
+      "currency",
+      "warning"
+    ],
+    "llm_arrays": 0,
+    "llm_nested_objects": 0
+  },
+  "assembly_note": "Validated 50-document collection combines initial model extractions with seven live document rechecks. Pack counts are deterministically recomputed from exact units. This is not a fresh 50-document replay after the last prompt edit.",
+  "checked_document_fields": [
+    "supplier_name",
+    "source_sku",
+    "manufacturer",
+    "manufacturer_part_number",
+    "unit_description",
+    "pack_count",
+    "price_text",
+    "currency"
+  ],
+  "document_audit": [
+    {
+      "document_id": "001-table-01.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52"
+    },
+    {
+      "document_id": "002-card-01.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15"
+    },
+    {
+      "document_id": "003-quote-01.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28"
+    },
+    {
+      "document_id": "004-table-01.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "6f68e4cf78470d970bb49985da2a1bcea5ed8928cb36bfc3a066ca78e10e650f"
+    },
+    {
+      "document_id": "005-card-01.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "5a88dd7120d4b24eeccafe376f810b8ac3197ab85921c634e6e71aa87e684331"
+    },
+    {
+      "document_id": "006-table-02.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "5f567827fbcd3a32d820a393ff7849ce5e6c96839847b651e53b5ac009c5d991"
+    },
+    {
+      "document_id": "007-card-02.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "8cc295be571d592a18313d2aa7fc412ea33ddd2c6cefc7d334cae5e0c7de942e"
+    },
+    {
+      "document_id": "008-quote-02.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "f48317e71e3d1185fb7a97909e17765a1fc2c6d22f4560dc0f3599daef779450"
+    },
+    {
+      "document_id": "009-table-02.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "4f5c5a1e8220052559120a88f98f178af82ff70cc98934b0cbb9f1c76c61ce2f"
+    },
+    {
+      "document_id": "010-card-02.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "2d838b388bf8557a316de0ff3f9d154b6116a6f8393631811d7537fea60d63cd"
+    },
+    {
+      "document_id": "011-table-03.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "b2ec24cfd6bff7d09ee45321152a7c9161e1240b744c490ce4a99142ffc0e762"
+    },
+    {
+      "document_id": "012-card-03.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "79cd16dafbaca7ecbf12ddc50af8ec0d2967a2306b1183e216662c724798247e"
+    },
+    {
+      "document_id": "013-quote-03.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "270508eabce27d8193979df1b9ffc74355e82d1a3d3bfcb368a8492905bf93ce"
+    },
+    {
+      "document_id": "014-table-03.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "9b62e5e1a7c4a4626e9beea472235a1c5e9b560c3e8b43a648b35cbc5b345f20"
+    },
+    {
+      "document_id": "015-card-03.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "a65ba13c6a418636a433fff9b95be2c06a2ac3807643a4bc0680461c59d76dac"
+    },
+    {
+      "document_id": "016-table-04.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "f672fad64d9ac619795ec6ea5f498251d92d683cd14596fb8d5951ce71fb3799"
+    },
+    {
+      "document_id": "017-card-04.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "3d77e695c385c2629e2693be0515a9db3ea1098acdbb2e2e015515b2a5dce662"
+    },
+    {
+      "document_id": "018-quote-04.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "d2bcf0c7da7178eb5aff469af024f9900ca5309b2de41ba948a1353acb0d47ca"
+    },
+    {
+      "document_id": "019-table-04.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "b1a8120907f8efccbb28a01322f302ee9ac3f99cd5a4cec344e69e67cd4f55b3"
+    },
+    {
+      "document_id": "020-card-04.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "07446f559045fcdfa77b65ff71d2ae7d9bac911c8ab0fd67e37149b9d7e6d762"
+    },
+    {
+      "document_id": "021-table-05.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "e92829e6a2ed77930f958180483d4e1124b164567be4189b1a95578c22bfab0d"
+    },
+    {
+      "document_id": "022-card-05.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "45573d6a3ae22b80421596ead3037b118bbb2ebe7530286389aa495c60270186"
+    },
+    {
+      "document_id": "023-quote-05.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "47ab1b85c05762d64d342b59bd71f2e81bc4a8447e90bf38c584125ad24050f7"
+    },
+    {
+      "document_id": "024-table-05.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "2763412d572026741bba7bd0189d538d55a4cb70e13b23ef8ff0bbe4b5170068"
+    },
+    {
+      "document_id": "025-card-05.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "6f88b6d08f5d004b9f6f9608fc36253d9db336f6fa8dbe5282ad9178f35af7f5"
+    },
+    {
+      "document_id": "026-table-06.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "3ea6e5e3dc8f5e02c4ddf0f89dea389c087a24c03cd4ca6528cd8229593ffae9"
+    },
+    {
+      "document_id": "027-card-06.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "fd09d95eef88dcfdee8cab5d218cebb91f62efceea38de5bcfeb960a99c094a4"
+    },
+    {
+      "document_id": "028-quote-06.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "8752e6a73990096763b220fd987dc46b6c33039b88ff062d6533c01b639c67ef"
+    },
+    {
+      "document_id": "029-table-06.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "5eb4297970d419d4f4f0f73060978901dd0d74ef4405a126ccd794198f60f258"
+    },
+    {
+      "document_id": "030-card-06.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "c7a5fb7253eef88f53799cf3c8b4ebac8f272f6d9d795136a1d0d32227540572"
+    },
+    {
+      "document_id": "031-table-07.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "562da18b7c41454dc9441cc14321c33c7a4a197800bff9b7499b44672a58d10a"
+    },
+    {
+      "document_id": "032-card-07.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "80e43b7c34a10c7155ab48218c3a4dd3bda3bc66dd1dae00e0dbe1c6b4227107"
+    },
+    {
+      "document_id": "033-quote-07.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "2d7a532f3174ed9d4abdad7894c62ecbf5980d73e6ad505fbe5716bcd6fd6e7c"
+    },
+    {
+      "document_id": "034-table-07.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "71b586b298b60246476ebff06cb8acf06fddb2ae6e316576e6efbe57940f2520"
+    },
+    {
+      "document_id": "035-card-07.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "89afc81886916a832653cb33b00e60d2a483d952895ebd1f0a8913351d5a9131"
+    },
+    {
+      "document_id": "036-table-08.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "f954310a630c435492ccce20c8e4030057cb4051743863283d082d0c9d01c7ee"
+    },
+    {
+      "document_id": "037-card-08.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "735789e57ee67310ee03ca54946665c49e74bbb87b804c509798f25b200a112f"
+    },
+    {
+      "document_id": "038-quote-08.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "34a928264478edd815fdb4d8d8ae5efad7adad50dbfcc0c15ac518144943d318"
+    },
+    {
+      "document_id": "039-table-08.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "922ee7b14b2c451db58a08b6eec64ce75a856c545af0597f9001252ac97a78a8"
+    },
+    {
+      "document_id": "040-card-08.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "763adaa39601805f49b98c027029bed245cd2128e9b90c05b067b43443d3fe10"
+    },
+    {
+      "document_id": "041-table-09.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "7dfcb759af1d1d194f4d7d81c771b8dba42a3132a7b947ae432621ef1c3e9799"
+    },
+    {
+      "document_id": "042-card-09.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "8ab6e91fca888bbb5707ae94d7d5de5114a7693c6b56a7caaebdc6341b9257e8"
+    },
+    {
+      "document_id": "043-quote-09.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "49ffbe34b6a95734a9c90d1b6dfb2263bcd5335597d681b4d74227e5dedf113e"
+    },
+    {
+      "document_id": "044-table-09.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "97f55bc57dd8a52c72d8fe70d13b14a7edcf6c58553cb0a2a961701912d27eaa"
+    },
+    {
+      "document_id": "045-card-09.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "1f3e04a679f6af3a66c40a4084e526fd6339c531228ef6945c6aa4e08a5f08eb"
+    },
+    {
+      "document_id": "046-table-10.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "80790d599ec8e43d442c46f61dadb86e86feef206132004baa6a4fe52c764f05"
+    },
+    {
+      "document_id": "047-card-10.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": true,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "c07e69793bd1e2d2bd890c1b92024e47532dfda281a5a0a7297b7b8d909bc36d"
+    },
+    {
+      "document_id": "048-quote-10.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "a8e29f4ac3f9d62941619fe0bff590bcca40ba712d6f4c1034bf5563fa938ac2"
+    },
+    {
+      "document_id": "049-table-10.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "2f11e43933c1161c3d5d6a767f1d1dbc770856dd5940ae174746a9bd8edfb052"
+    },
+    {
+      "document_id": "050-card-10.md",
+      "offer_count": 2,
+      "passed": true,
+      "model_rechecked": false,
+      "unit_count_processing": "deterministic current parser",
+      "source_sha256": "0f405fff2a67e73fa77f7044671ac6f0a2160542472be010da702f11d2bb6243"
+    }
+  ],
+  "artifacts": {
+    "baseline": "output/experiments/gptoss-retrieval-baseline-01",
+    "full_pass": "output/experiments/gptoss-retrieval-flat-03",
+    "rechecks": "output/experiments/gptoss-retrieval-recheck-01",
+    "injection": "output/experiments/gptoss-retrieval-injection-01",
+    "linked": "output/experiments/gptoss-retrieval-linked-01",
+    "assembled": "output/experiments/gptoss-retrieval-final/supplier-offers.json"
+  }
+}

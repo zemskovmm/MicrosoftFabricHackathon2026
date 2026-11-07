@@ -27,6 +27,10 @@ Configure optional per-role managed identity client IDs and actual Entra Agent I
 
 Outcomes: `review_required` stops the graph; `awaiting_human_approval` saves the completed analysis in `output/<run_id>/`. Inspect `agent-outcome.json`, `run.json` and per-tool receipts. Sources, policy, execution ID and provider are bound to run identity. Receipts validate the authoritative stage payload; model prose never overwrites financial results.
 
+## First-agent output contract
+
+Retrieval returns only `disposition`, `reason_code`, `rationale`; source evidence is attached by the application. Supplier extraction frames individual Markdown product sections and requests nine scalar fields per call; unit counts, quotes, hashes and result arrays are assembled by code. See `docs/retrieval-gptoss-experiment.md` for the real GPT-OSS experiment and its limits. Agents 2–4 retain their existing contracts.
+
 ## Local Ollama
 
 ```sh

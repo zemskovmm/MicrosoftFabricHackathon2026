@@ -46,13 +46,29 @@ class SimulatedModel(FunctionInvocationLayer, BaseChatClient):
                 receipt = json.loads(receipt["text"])
         else:
             receipt = {"receipt": "0" * 64, "handoff": {"source_references": ["invented"]}}
-        assessment = dict(
-            receipt="0" * 64 if self.fabricate else receipt["receipt"],
-            disposition="request_review" if self.review else "proceed",
-            rationale="Simulated model inspection; not live Azure evidence.",
-            citations=receipt["handoff"]["source_references"][:1],
-            match_suggestions=[],
-        )
+        if self.role == "retrieval" and not self.skip_tool:
+            reason = (
+                "no_usable_data"
+                if receipt["accepted_records"] == 0
+                else "partial_scope"
+                if receipt["quarantined_records"]
+                else "ready"
+            )
+            assessment = dict(
+                disposition="request_review" if reason == "no_usable_data" else "proceed",
+                reason_code=reason,
+                rationale="Simulated readiness decision",
+            )
+            if self.fabricate:
+                assessment["receipt"] = "0" * 64
+        else:
+            assessment = dict(
+                receipt="0" * 64 if self.fabricate else receipt["receipt"],
+                disposition="request_review" if self.review else "proceed",
+                rationale="Simulated model inspection; not live Azure evidence.",
+                citations=receipt["handoff"]["source_references"][:1],
+                match_suggestions=[],
+            )
         if self.suggest:
             uncertain = [r for r in receipt["handoff"]["payload"]["crosswalk"] if not r["canonical_sku"]]
             assessment["match_suggestions"] = [

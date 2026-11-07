@@ -56,7 +56,11 @@ class OllamaChatClient(FunctionInvocationLayer, BaseChatClient):
                     text = value if isinstance(value, str) else json.dumps(value)
                     try:
                         parsed = json.loads(text)
-                        if isinstance(parsed, dict) and "receipt" in parsed and "handoff" in parsed:
+                        if (
+                            isinstance(parsed, dict)
+                            and "receipt" in parsed
+                            and ("handoff" in parsed or parsed.get("stage_complete") is True)
+                        ):
                             stage_result_received = True
                             stage_receipt = parsed
                     except (ValueError, TypeError):
@@ -87,6 +91,9 @@ class OllamaChatClient(FunctionInvocationLayer, BaseChatClient):
             "keep_alive": "10m",
             "options": {"temperature": 0, "num_ctx": 16384, "num_predict": 1200},
         }
+        if self.model.lower().startswith("gpt-oss"):
+            payload["think"] = "low"
+            payload["options"]["num_predict"] = 2200
         # Llama 8B is more reliable when tool selection and schema-constrained final output
         # are separate turns. The Microsoft framework executes every returned tool call.
         if tools and not stage_result_received:
@@ -101,7 +108,7 @@ class OllamaChatClient(FunctionInvocationLayer, BaseChatClient):
                 )
                 # Constrain evidence at generation time as well as validating it afterwards.
                 # This avoids 8B models corrupting long SHA-256 strings when copying them.
-                if stage_receipt and "receipt" in schema.get("properties", {}):
+                if stage_receipt and "handoff" in stage_receipt and "receipt" in schema.get("properties", {}):
                     schema["properties"]["receipt"]["enum"] = [stage_receipt["receipt"]]
                     sources = stage_receipt["handoff"]["source_references"]
                     schema["properties"]["citations"]["items"]["enum"] = sources

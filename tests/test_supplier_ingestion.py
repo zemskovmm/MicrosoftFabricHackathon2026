@@ -11,7 +11,7 @@ from inventorypulse.agentic import Runtime
 from inventorypulse.sample import generate
 from inventorypulse.supplier_ingestion import ExtractedDocument, extract_documents, validate_extraction
 
-TEXT = "# Example supplier\nSKU: V-101 | Brand: SKF | MPN: 6205-2RSH | Pack: each | EUR 10.00\n"
+TEXT = "# Example supplier\n\n## Item 1\nSKU: V-101 | Brand: SKF | MPN: 6205-2RSH | Pack: each | EUR 10.00\n"
 
 
 def extracted():
@@ -48,7 +48,13 @@ def test_extraction_requires_verbatim_evidence_and_known_fields():
 
 class ExtractionModel(BaseChatClient):
     async def _inner_get_response(self, *, messages, stream, options, **kwargs):
-        return ChatResponse(messages=Message("assistant", [extracted().model_dump_json()]))
+        document = extracted()
+        flat = {
+            "supplier_name": document.supplier_name,
+            "warning": "",
+            **document.offers[0].model_dump(exclude={"source_quote", "pack_count"}),
+        }
+        return ChatResponse(messages=Message("assistant", [json.dumps(flat)]))
 
 
 def test_real_agent_extracts_and_validates_markdown_without_manual_converter(tmp_path):

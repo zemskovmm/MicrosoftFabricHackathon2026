@@ -54,6 +54,8 @@ Open http://127.0.0.1:8000. The model must already appear in Ollama's installed-
 
 The clean sample is generated explicitly for the complete workflow demonstration. The default sample retains intentional bad records and may correctly stop for review. If any agent requests review, later stages are not executed and no completed run is saved. The 50 supplier files remain a separate extraction demo; this command exercises the 24-SKU arithmetic fixture.
 
+The first-agent prompt and flat output contracts were tested against a real local `gpt-oss:latest` server. See [experiment results](docs/retrieval-gptoss-experiment.md). Retrieval decisions have three scalar fields; supplier offers have nine. Application-generated source evidence and collections are kept outside the required LLM response.
+
 ## Sample data and policy
 
 `data/sample/` contains **24 canonical SKUs**, **48 separate warehouse holdings**, **five intentionally invalid/uncertain records**, and **50 labelled examples**. All records and economics are invented. Repeated global demand and safety stock values are checked for consistency rather than summed across warehouses. Holdings must represent distinct physical inventory, not mirrored ERP/WMS copies. One currency (illustrative USD) is assumed; mixed-currency data requires conversion before ingestion.

@@ -95,7 +95,7 @@ Prices in EUR. File ID: LIST-410.
     add(
         "holdout",
         "reordered_table",
-        """# Orbit Calibration Ltd [West]
+        """# Orbit Calibration Ltd
 All net amounts are GBP. Quotation number Q-20477 is a document identifier.
 
 | Packaging | Order reference | Maker | Technical designation | Net amount | Factory ref |
@@ -103,7 +103,7 @@ All net amounts are GBP. Quotation number Q-20477 is a document identifier.
 | carton of 6 | LQ-710 | Prism Works (optical grade) | Lens-cleaning bottles | 27.40 | CLN-P |
 | reel | LQ-843 | not supplied | Protective strip, supplied as a reel | 13.80 | n/a |
 """,
-        "Orbit Calibration Ltd [West]",
+        "Orbit Calibration Ltd",
         [
             offer("LQ-710", "Prism Works (optical grade)", "CLN-P", "carton of 6", 6, "27.40", "GBP"),
             offer("LQ-843", None, None, "reel", None, "13.80", "GBP"),

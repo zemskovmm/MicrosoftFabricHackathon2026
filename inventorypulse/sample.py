@@ -6,7 +6,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 
-def generate(folder: Path, as_of: date = date(2026, 10, 31)):
+def generate(folder: Path, as_of: date = date(2026, 10, 31), *, include_exceptions: bool = True):
     folder.mkdir(parents=True, exist_ok=True)
     masters, holdings, labels, baseline = [], [], [], []
     for n in range(1, 25):
@@ -47,15 +47,16 @@ def generate(folder: Path, as_of: date = date(2026, 10, 31)):
         baseline.append(
             dict(canonical_sku=sku, eo_value=str((total if is_obsolete else total - 70) * (10 + n * 5)))
         )
-    template = dict(holdings[0])
-    for code, changes in [
-        ("UNKNOWN", dict(description="unidentified mystery component")),
-        ("BAD-PRICE", dict(unit_cost=-3)),
-        ("STALE", dict(snapshot_date=str(as_of - timedelta(days=9)))),
-        ("FUTURE", dict(snapshot_date=str(as_of + timedelta(days=1)))),
-        ("BAD-QTY", dict(quantity=-1)),
-    ]:
-        holdings.append({**template, "source_sku": code, **changes})
+    if include_exceptions:
+        template = dict(holdings[0])
+        for code, changes in [
+            ("UNKNOWN", dict(description="unidentified mystery component")),
+            ("BAD-PRICE", dict(unit_cost=-3)),
+            ("STALE", dict(snapshot_date=str(as_of - timedelta(days=9)))),
+            ("FUTURE", dict(snapshot_date=str(as_of + timedelta(days=1)))),
+            ("BAD-QTY", dict(quantity=-1)),
+        ]:
+            holdings.append({**template, "source_sku": code, **changes})
     labels.extend(
         [
             dict(source_sku="UNKNOWN", description="unidentified mystery component", canonical_sku=None),
@@ -82,7 +83,7 @@ def generate(folder: Path, as_of: date = date(2026, 10, 31)):
     (folder / "SYNTHETIC_DATA.md").write_text(
         "# Synthetic inventory pack\n\nEntirely invented, deterministic hackathon data; no real customer records.\n"
         f"Cutoff: {as_of}. Currency: illustrative USD throughout.\n"
-        "24 canonical SKUs, 48 separate warehouse holdings, five intentional bad records, 50 labelled matches.\n"
+        f"24 canonical SKUs, 48 separate warehouse holdings, {5 if include_exceptions else 0} intentional bad records, 50 labelled matches.\n"
         "Demand and safety stock are canonical/global values repeated per holding; they are not summed.\n"
         "Open PO quantities are per holding. Do not load mirrored stock copies as separate physical holdings.\n"
         "The baseline is a synthetic reference using a 3-month horizon, 10 safety units and lifecycle flags.\n"

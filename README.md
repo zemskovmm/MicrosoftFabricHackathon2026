@@ -39,6 +39,21 @@ Run exports go to `output/<run_id>/`; local runs, decisions and hash-linked audi
 
 `run` is the deterministic offline baseline. `agentic-run` executes four real Microsoft Agent Framework tool-calling agents with Azure OpenAI models; its transport is simulated only in tests. No live Microsoft tenant has been configured or validated here. Description matching is conservative and numeric/MPN-aware; model suggestions require human review. See [the concise agent hand-off](docs/agent-framework-handoff.md). See [deployment instructions](fabric/README.md) and [challenge evidence matrix](docs/acceptance.md).
 
+## Run with local Ollama
+
+The same four-agent graph supports a running local Ollama server; it does not download models or call Azure in local mode.
+
+```sh
+.venv/bin/python -m pip install -e '.[ollama,test]'
+.venv/bin/inventorypulse sample --clean --folder output/ollama-clean
+.venv/bin/inventorypulse --db output/ollama.db agentic-run --provider ollama --model llama3.1:8b --data output/ollama-clean
+.venv/bin/inventorypulse --db output/ollama.db serve
+```
+
+Open http://127.0.0.1:8000. The model must already appear in Ollama's installed-model list. `--model` and `--ollama-url` override `OLLAMA_MODEL` / `OLLAMA_BASE_URL`; the defaults are `llama3.1:8b` and `http://127.0.0.1:11434`. Only loopback URLs are permitted. The native Ollama adapter separates model tool selection from schema-constrained final assessments. Receipts and citations are constrained to actual tool evidence, then validated by the unchanged workflow gate.
+
+The clean sample is generated explicitly for the complete workflow demonstration. The default sample retains intentional bad records and may correctly stop for review. If any agent requests review, later stages are not executed and no completed run is saved. The 50 supplier files remain a separate extraction demo; this command exercises the 24-SKU arithmetic fixture.
+
 ## Sample data and policy
 
 `data/sample/` contains **24 canonical SKUs**, **48 separate warehouse holdings**, **five intentionally invalid/uncertain records**, and **50 labelled examples**. All records and economics are invented. Repeated global demand and safety stock values are checked for consistency rather than summed across warehouses. Holdings must represent distinct physical inventory, not mirrored ERP/WMS copies. One currency (illustrative USD) is assumed; mixed-currency data requires conversion before ingestion.

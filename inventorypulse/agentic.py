@@ -53,6 +53,9 @@ COMMON = (
     "quarantined individual rows may remain excluded while the valid scope proceeds. "
     "Do not claim complete inventory scope when sources or rows were excluded. "
     "Only a human can approve proposals. No tools execute ERP actions. "
+    "Use stage_summary to identify concrete issues. Request review for a specific evidence deficit, "
+    "not hypothetical concerns absent from this dataset. Proceed means pass valid analytical evidence "
+    "to the next stage or prepare proposals for human approval; it never authorizes an action. "
 )
 ROLE_INSTRUCTIONS = {
     "retrieval": "Check cutoff, accepted counts, freshness and exclusions. Inspect supplier documents only when relevant.",
@@ -147,7 +150,32 @@ class Runtime:
         # Gold labels stay outside agents' inputs; the scorecard is evaluation evidence only.
         if role == "sku-matching":
             payload["payload"]["scorecard"].pop("examples", None)
-        receipt = dict(receipt=digest(payload), handoff=payload)
+        stage_summary = {"status": payload["status"], "exceptions": payload["exception_flags"]}
+        if role == "retrieval":
+            stage_summary.update(payload["payload"])
+        elif role == "sku-matching":
+            crosswalk = payload["payload"]["crosswalk"]
+            stage_summary.update(
+                matched=sum(r["canonical_sku"] is not None for r in crosswalk),
+                unresolved=sum(r["canonical_sku"] is None for r in crosswalk),
+                minimum_match_confidence=min((r["confidence"] for r in crosswalk), default=0),
+            )
+        elif role == "eo-calculation":
+            reconciliation = payload["payload"]["reconciliation"]
+            stage_summary.update(
+                analysed_skus=len(payload["payload"]["positions"]),
+                reconciliation_status=reconciliation.get("status", "same_cutoff"),
+                absolute_reconciliation_variance=reconciliation.get("absolute_item_variance"),
+            )
+        elif role == "recommendation":
+            stage_summary.update(
+                proposals=len(payload["payload"]["recommendations"]),
+                all_proposals_pending=all(
+                    r["approval_state"] == "pending" for r in payload["payload"]["recommendations"]
+                ),
+                execution_available=False,
+            )
+        receipt = dict(receipt=digest(payload), stage_summary=stage_summary, handoff=payload)
         self.receipts[role] = receipt
         return receipt
 
@@ -198,7 +226,11 @@ class Runtime:
             offer, doc = catalogue[key]
             for identity_field in ("manufacturer", "manufacturer_part_number"):
                 value = getattr(offer, identity_field)
-                if value and holding.get(identity_field) and identifier(holding[identity_field]) != identifier(value):
+                if (
+                    value
+                    and holding.get(identity_field)
+                    and identifier(holding[identity_field]) != identifier(value)
+                ):
                     raise ValueError("Supplier identity conflicts with the inventory record")
                 if value:
                     holding[identity_field] = value

@@ -27,6 +27,16 @@ Configure optional per-role managed identity client IDs and actual Entra Agent I
 
 Outcomes: `review_required` stops the graph; `awaiting_human_approval` saves the completed analysis in `output/<run_id>/`. Inspect `agent-outcome.json`, `run.json` and per-tool receipts. Sources, policy, execution ID and provider are bound to run identity. Receipts validate the authoritative stage payload; model prose never overwrites financial results.
 
+## Local Ollama
+
+```sh
+inventorypulse sample --clean --folder output/ollama-clean
+inventorypulse --db output/ollama.db agentic-run --provider ollama --model llama3.1:8b --data output/ollama-clean
+inventorypulse --db output/ollama.db serve
+```
+
+Requires an already installed tool-capable model on the loopback Ollama server. No automatic downloads or Azure model fallback. See `inventorypulse/ollama_clients.py`. A live run with `llama3.1:8b` completed all four agents and reached human approval; the invalid-input fixture correctly stopped for review.
+
 ## Verification / remaining deployment
 
 Local tests use the actual Microsoft Agent Framework graph and function-calling loop with a simulated model transport. No live Azure model, Fabric MCP, governed Entra identity, Agent 365, Power BI, Activator or Teams deployment has been verified. Supply licensed tenant resources and capture live evidence separately. Dependencies pinned: `agent-framework-core==1.24.0`, `agent-framework-openai==1.18.0`.

@@ -35,6 +35,11 @@ def main():
     gen = sub.add_parser("sample")
     gen.add_argument("--folder", type=Path, default=Path("data/sample"))
     gen.add_argument("--as-of", type=date.fromisoformat, default=date(2026, 10, 31))
+    gen.add_argument(
+        "--clean",
+        action="store_true",
+        help="Generate only valid synthetic holdings for the full workflow demo",
+    )
     run = sub.add_parser("run")
     run.add_argument("--data", type=Path, default=Path("data/sample"))
     run.add_argument("--as-of", type=date.fromisoformat, default=date(2026, 10, 31))
@@ -64,10 +69,14 @@ def main():
     extract = sub.add_parser("extract-suppliers")
     extract.add_argument("--documents", type=Path, default=Path("data/vendor-documents"))
     extract.add_argument("--destination", type=Path, default=Path("output/supplier-offers.json"))
+    for command in (maf, extract):
+        command.add_argument("--provider", choices=["azure", "ollama"], default="azure")
+        command.add_argument("--model", help="Installed Ollama model; defaults to llama3.1:8b")
+        command.add_argument("--ollama-url", help="Local Ollama server URL")
     sub.add_parser("audit")
     args = parser.parse_args()
     if args.command == "sample":
-        generate(args.folder, args.as_of)
+        generate(args.folder, args.as_of, include_exceptions=not args.clean)
         print(f"Synthetic pack written to {args.folder}; cutoff {args.as_of}")
         return
     if args.command == "fabric-fetch":
@@ -81,10 +90,17 @@ def main():
     if args.command in ("agentic-run", "extract-suppliers"):
         import asyncio
 
-        from .azure_clients import AzureClients
+        if args.provider == "ollama":
+            from .ollama_clients import OllamaClients
+
+            client_manager = OllamaClients(args.model, args.ollama_url)
+        else:
+            from .azure_clients import AzureClients
+
+            client_manager = AzureClients()
 
         async def execute_agents():
-            async with AzureClients() as clients:
+            async with client_manager as clients:
                 if args.command == "extract-suppliers":
                     from .supplier_ingestion import extract_documents
 
@@ -102,6 +118,8 @@ def main():
                     data=args.data,
                     cutoff=args.as_of,
                     policy=policy,
+                    provider=f"ollama:{clients.model}" if args.provider == "ollama" else "azure_openai",
+                    timeout_seconds=360 if args.provider == "ollama" else 120,
                     supplier_documents=args.supplier_documents,
                     supplier_extraction=args.supplier_extraction,
                     fabric_workspace=args.workspace,

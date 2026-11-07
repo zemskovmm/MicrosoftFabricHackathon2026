@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e30ec18c-76db-42e9-a452-8460b36eb668",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/.archify/workflow-document-processing-20261107-201800/candidate.json",
+  "output": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/.archify/workflow-document-processing-20261107-201800/document-processing.html",
+  "specification": {
+    "sha256": "63e96ccc9e4925b2c949a54255d8810271864c571f054d0726a019cc7e7be69b",
+    "bytes": 12471
+  },
+  "artifact": {
+    "sha256": "6378c08aa9ac690fcf32f2b9183479cd4a516274468b10e1ccfa84b4c94d45da",
+    "bytes": 783041
+  }
+}

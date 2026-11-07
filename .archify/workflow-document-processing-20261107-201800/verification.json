@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/.archify/workflow-document-processing-20261107-201800/candidate.json",
+    "sha256": "63e96ccc9e4925b2c949a54255d8810271864c571f054d0726a019cc7e7be69b",
+    "bytes": 12471
+  },
+  "artifact": {
+    "path": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/.archify/workflow-document-processing-20261107-201800/document-processing.html",
+    "sha256": "6378c08aa9ac690fcf32f2b9183479cd4a516274468b10e1ccfa84b4c94d45da",
+    "bytes": 783041
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/output/archify-document-processing-review2/document-processing.finalize.json",
+    "summaryReceipt": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/output/archify-document-processing-review2/document-processing.finalize-summary.json",
+    "browserCheckReceipt": "/Users/michaelzemskov/Documents/ChatGPT/Microsoft Fabric Hackathon/MicrosoftFabricHackathon2026/output/archify-document-processing-review2/document-processing.browser-check.json"
+  },
+  "update": {
+    "status": "update_available",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.2.0",
+    "releaseNotes": "https://github.com/tt-a1i/archify/releases/tag/v3.2.0",
+    "severity": "normal",
+    "checkedAt": "2026-11-07T19:17:25.190Z",
+    "source": "cache",
+    "noticeRequired": true,
+    "noticeText": "Archify update: 3.0.1 → 3.2.0. A previous check at 2026-11-07T19:17:25.190Z found a newer release. Release notes: https://github.com/tt-a1i/archify/releases/tag/v3.2.0. The installed Skill has not changed; ask to snooze or ignore this reminder.",
+    "eventKey": "archify@sha256:70e210265c59f24dcbdf2a502ff671104b5454e7ee7d3554aecd86bad32384f5"
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1579
+}

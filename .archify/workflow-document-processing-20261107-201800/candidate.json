@@ -1,0 +1,452 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "InventoryPulse — путь документа",
+    "output": ".archify/workflow-document-processing-20261107-201800/document-processing.html",
+    "quality_profile": "showcase",
+    "visual_preset": "signal-flow",
+    "animation": "none",
+    "repository": {
+      "url": "https://github.com/zemskovmm/MicrosoftFabricHackathon2026.git",
+      "provider": "github",
+      "revision": "595bf538e40b126da11bf05701963957b988d49a"
+    }
+  },
+  "lanes": [
+    {
+      "id": "sources",
+      "label": "Документы и извлечение"
+    },
+    {
+      "id": "retrieval",
+      "label": "Проверка складских данных"
+    },
+    {
+      "id": "identity",
+      "label": "Сопоставление и расчёт"
+    },
+    {
+      "id": "recommendation",
+      "label": "Варианты действий"
+    },
+    {
+      "id": "human",
+      "label": "Решение человека"
+    }
+  ],
+  "mainPath": [
+    "documents",
+    "extract",
+    "retrieval",
+    "matching",
+    "calculate",
+    "recommend",
+    "human"
+  ],
+  "nodes": [
+    {
+      "id": "documents",
+      "lane": "sources",
+      "col": 0,
+      "type": "external",
+      "label": "Документы поставщиков",
+      "sublabel": "Northline + Harborlight",
+      "width": 165,
+      "sources": [
+        {
+          "path": "data/vendor-documents/001-table-01.md",
+          "line": 1,
+          "label": "Документы поставщиков"
+        }
+      ]
+    },
+    {
+      "id": "extract",
+      "lane": "sources",
+      "col": 1,
+      "type": "backend",
+      "label": "Извлечение из Markdown",
+      "sublabel": "SKF · 6205-2RSH · each",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/supplier_ingestion.py",
+          "line": 171,
+          "label": "Извлечение из Markdown"
+        }
+      ]
+    },
+    {
+      "id": "stock",
+      "lane": "retrieval",
+      "col": 0,
+      "type": "database",
+      "label": "Складские записи",
+      "sublabel": "Madrid 120 · Berlin 80 шт.",
+      "width": 165,
+      "sources": [
+        {
+          "path": "docs/retrieval-gptoss-experiment.md",
+          "line": 1,
+          "label": "Складские записи"
+        }
+      ]
+    },
+    {
+      "id": "retrieval",
+      "lane": "retrieval",
+      "col": 1,
+      "type": "backend",
+      "label": "1. Retrieval",
+      "sublabel": "2 приняты · 0 исключены",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/agentic.py",
+          "line": 271,
+          "label": "1. Retrieval"
+        }
+      ]
+    },
+    {
+      "id": "matching",
+      "lane": "identity",
+      "col": 1,
+      "type": "backend",
+      "label": "2. SKU Matching",
+      "sublabel": "2 SKU → 1 товар SKF",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/engine.py",
+          "line": 159,
+          "label": "2. SKU Matching"
+        }
+      ]
+    },
+    {
+      "id": "calculate",
+      "lane": "identity",
+      "col": 2,
+      "type": "backend",
+      "label": "3. E&O Calculation",
+      "sublabel": "Излишек 130 · стоимость 1560",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/engine.py",
+          "line": 205,
+          "label": "3. E&O Calculation"
+        }
+      ]
+    },
+    {
+      "id": "recommend",
+      "lane": "recommendation",
+      "col": 2,
+      "type": "backend",
+      "label": "4. Recommendation",
+      "sublabel": "Скидка: 650 · утилизация: 0",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/engine.py",
+          "line": 274,
+          "label": "4. Recommendation"
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "lane": "human",
+      "col": 2,
+      "type": "security",
+      "label": "Решение человека",
+      "sublabel": "2 предложения · pending",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/store.py",
+          "line": 89,
+          "label": "Решение человека"
+        }
+      ]
+    },
+    {
+      "id": "badsource",
+      "lane": "sources",
+      "col": 2,
+      "type": "security",
+      "label": "Ошибка извлечения",
+      "sublabel": "MPN отсутствует в источнике",
+      "width": 165,
+      "sources": [
+        {
+          "path": "tests/test_supplier_ingestion.py",
+          "line": 37,
+          "label": "Ошибка извлечения"
+        }
+      ]
+    },
+    {
+      "id": "quarantine",
+      "lane": "retrieval",
+      "col": 2,
+      "type": "security",
+      "label": "Исключённая строка",
+      "sublabel": "unit_cost = −1",
+      "width": 165,
+      "sources": [
+        {
+          "path": "scripts/agent_generalization_experiment.py",
+          "line": 78,
+          "label": "Исключённая строка"
+        }
+      ]
+    },
+    {
+      "id": "unknown",
+      "lane": "identity",
+      "col": 0,
+      "type": "security",
+      "label": "Неизвестный товар",
+      "sublabel": "UNREGISTERED-EXECUTION",
+      "width": 165,
+      "sources": [
+        {
+          "path": "scripts/agent_generalization_experiment.py",
+          "line": 80,
+          "label": "Неизвестный товар"
+        }
+      ]
+    },
+    {
+      "id": "variance",
+      "lane": "identity",
+      "col": 3,
+      "type": "security",
+      "label": "Сверка не прошла",
+      "sublabel": "Разница 37 или другая дата",
+      "width": 165,
+      "sources": [
+        {
+          "path": "scripts/agent_generalization_experiment.py",
+          "line": 82,
+          "label": "Сверка не прошла"
+        }
+      ]
+    },
+    {
+      "id": "boundary",
+      "lane": "recommendation",
+      "col": 3,
+      "type": "security",
+      "label": "Нарушено согласование",
+      "sublabel": "Предложения уже approved",
+      "width": 165,
+      "sources": [
+        {
+          "path": "docs/agent-generalization-experiment.md",
+          "line": 30,
+          "label": "Нарушено согласование"
+        }
+      ]
+    },
+    {
+      "id": "approved",
+      "lane": "human",
+      "col": 3,
+      "type": "database",
+      "label": "Одобрено человеком",
+      "sublabel": "Альтернативы не выбраны",
+      "width": 165,
+      "sources": [
+        {
+          "path": "tests/test_workflow.py",
+          "line": 126,
+          "label": "Одобрено человеком"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "lane": "retrieval",
+      "col": 3,
+      "type": "security",
+      "label": "Нет пригодных данных",
+      "sublabel": "Все снимки: 2020-01-01",
+      "width": 165,
+      "sources": [
+        {
+          "path": "scripts/agent_generalization_experiment.py",
+          "line": 74,
+          "label": "Нет пригодных данных"
+        }
+      ]
+    },
+    {
+      "id": "rejected",
+      "lane": "human",
+      "col": 1,
+      "type": "database",
+      "label": "Отклонено человеком",
+      "sublabel": "Без исполнения в ERP",
+      "width": 165,
+      "sources": [
+        {
+          "path": "inventorypulse/store.py",
+          "line": 89,
+          "label": "Отклонено человеком"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "catalogue",
+      "from": "documents",
+      "to": "extract",
+      "label": "2 SKU поставщиков",
+      "role": "main"
+    },
+    {
+      "id": "extract-retrieval",
+      "from": "extract",
+      "to": "retrieval",
+      "label": "2 записи + цитаты",
+      "role": "main"
+    },
+    {
+      "id": "stock-retrieval",
+      "from": "stock",
+      "to": "retrieval",
+      "label": "120 + 80 шт.",
+      "role": "branch"
+    },
+    {
+      "id": "retrieval-matching",
+      "from": "retrieval",
+      "to": "matching",
+      "label": "2 приняты",
+      "role": "main"
+    },
+    {
+      "id": "matching-calculation",
+      "from": "matching",
+      "to": "calculate",
+      "label": "1 общий товар",
+      "role": "main"
+    },
+    {
+      "id": "calculation-recommend",
+      "from": "calculate",
+      "to": "recommend",
+      "label": "130 шт. · 1560",
+      "role": "main"
+    },
+    {
+      "id": "recommend-human",
+      "from": "recommend",
+      "to": "human",
+      "label": "2 pending",
+      "role": "main"
+    },
+    {
+      "id": "source-stop",
+      "from": "extract",
+      "to": "badsource",
+      "label": "6205-2Z ≠ исходник",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "retrieval-quarantine",
+      "from": "retrieval",
+      "to": "quarantine",
+      "label": "5 годны · 1 исключена",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "retrieval-empty",
+      "from": "retrieval",
+      "to": "empty",
+      "label": "0 годных",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "matching-stop",
+      "from": "matching",
+      "to": "unknown",
+      "label": "1 неизвестен",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "calculate-stop",
+      "from": "calculate",
+      "to": "variance",
+      "label": "Δ = 37",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "recommend-stop",
+      "from": "recommend",
+      "to": "boundary",
+      "label": "17 approved",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "human-approved",
+      "from": "human",
+      "to": "approved",
+      "label": "approved",
+      "role": "branch"
+    },
+    {
+      "id": "human-rejected",
+      "from": "human",
+      "to": "rejected",
+      "label": "rejected",
+      "role": "branch"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Один товар, разные SKU",
+      "items": [
+        "Northline: NL-01-01-1; Harborlight: HC-01-02-2. Оба SKF / 6205-2RSH → MRO-SKF-6205-2RSH.",
+        "Документы содержат и другие товары. На схеме прослеживается только выбранная пара подшипников."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Как получены числа",
+      "items": [
+        "200 шт. на складе. Цель: 20 × 3 месяца + 10 = 70. Излишек: 130 × учётная стоимость 12 = 1560. Baseline: 1560; разница: 0.",
+        "Скидка: 1560 × 50% − 130 × 1 = 650. Утилизация: max(0, 1560 × 5% − 130) = 0. Ставки демонстрационные. Цена каталога не заменяет себестоимость."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Что проверено",
+      "items": [
+        "Основной связанный путь сейчас перепроверен инструментами без нового LLM-прогона. Извлечение и Retrieval ранее проверялись на GPT-OSS.",
+        "Ветки четырёх агентов — отдельные реальные проверки GPT-OSS; 15/15 holdout. Ошибки извлечения и решения человека — автоматические тесты. Ветка 0 годных и ветка 5+1 относятся к другим наборам."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Границы workflow",
+      "items": [
+        "После ошибки соответствующая ветка останавливается. При partial_scope годные строки продолжают путь, исключённые требуют отдельной проверки.",
+        "LLM возвращает reason_code и rationale; инструменты сопоставляют товары и считают деньги. Реализованный эффект 0. Исполнение ERP ручное. Fabric здесь не развёрнут. Интерфейс просмотрщика — English."
+      ]
+    }
+  ]
+}

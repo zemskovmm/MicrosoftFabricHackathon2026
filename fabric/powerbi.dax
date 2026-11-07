@@ -1,0 +1,9 @@
+// Create measures on the positions table. Filter all fact tables to exactly one run_id.
+Inventory Value = SUM(positions[inventory_value])
+E&O Value = SUM(positions[eo_value])
+E&O Share = DIVIDE([E&O Value], [Inventory Value])
+// Rank 1 is one mutually exclusive option per SKU.
+Estimated Opportunity = CALCULATE(SUM(recommendations[estimated_release]), recommendations[rank] = 1)
+// Approvals are separate from estimates. Do not infer execution from approval.
+Approved Opportunity = CALCULATE(SUM(decisions[estimated_release]), decisions[decision] = "approved")
+Realized Cash = 0

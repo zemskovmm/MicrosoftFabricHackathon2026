@@ -1,0 +1,10 @@
+version: 1
+checks:
+  lint:
+    run: .venv/bin/ruff check inventorypulse tests
+  tests:
+    run: .venv/bin/pytest -q
+  demo:
+    run: .venv/bin/python -m inventorypulse.cli run
+default:
+  use: [lint, tests, demo]

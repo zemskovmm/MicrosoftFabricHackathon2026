@@ -1,0 +1,133 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "default": "sample-policy-v1",
+      "title": "Version",
+      "type": "string"
+    },
+    "horizon_months": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "3",
+      "title": "Horizon Months"
+    },
+    "obsolete_after_days": {
+      "default": 365,
+      "exclusiveMinimum": 0,
+      "title": "Obsolete After Days",
+      "type": "integer"
+    },
+    "max_feed_age_days": {
+      "default": 1,
+      "minimum": 0,
+      "title": "Max Feed Age Days",
+      "type": "integer"
+    },
+    "match_threshold": {
+      "default": 0.86,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Match Threshold",
+      "type": "number"
+    },
+    "ambiguity_margin": {
+      "default": 0.08,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Ambiguity Margin",
+      "type": "number"
+    },
+    "alert_value": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "50000",
+      "title": "Alert Value"
+    },
+    "return_rate": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "0.85",
+      "title": "Return Rate"
+    },
+    "transfer_rate": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "0.75",
+      "title": "Transfer Rate"
+    },
+    "discount_rate": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "0.50",
+      "title": "Discount Rate"
+    },
+    "scrap_rate": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "0.05",
+      "title": "Scrap Rate"
+    },
+    "handling_cost_per_unit": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": "1",
+      "title": "Handling Cost Per Unit"
+    }
+  },
+  "title": "Policy",
+  "type": "object"
+}

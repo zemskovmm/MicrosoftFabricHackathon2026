@@ -1,0 +1,135 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "supplier_name": {
+      "default": "",
+      "title": "Supplier Name",
+      "type": "string"
+    },
+    "manufacturer": {
+      "default": "",
+      "title": "Manufacturer",
+      "type": "string"
+    },
+    "manufacturer_part_number": {
+      "default": "",
+      "title": "Manufacturer Part Number",
+      "type": "string"
+    },
+    "physical_holding_id": {
+      "default": "",
+      "title": "Physical Holding Id",
+      "type": "string"
+    },
+    "source_reference": {
+      "default": "",
+      "title": "Source Reference",
+      "type": "string"
+    },
+    "source_system": {
+      "minLength": 1,
+      "title": "Source System",
+      "type": "string"
+    },
+    "source_sku": {
+      "minLength": 1,
+      "title": "Source Sku",
+      "type": "string"
+    },
+    "warehouse": {
+      "minLength": 1,
+      "title": "Warehouse",
+      "type": "string"
+    },
+    "description": {
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "snapshot_date": {
+      "format": "date",
+      "title": "Snapshot Date",
+      "type": "string"
+    },
+    "quantity": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Quantity"
+    },
+    "unit_cost": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Unit Cost"
+    },
+    "monthly_demand": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Monthly Demand"
+    },
+    "safety_stock": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Safety Stock"
+    },
+    "last_movement": {
+      "format": "date",
+      "title": "Last Movement",
+      "type": "string"
+    },
+    "open_po_quantity": {
+      "anyOf": [
+        {
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "default": 0,
+      "title": "Open Po Quantity"
+    }
+  },
+  "required": [
+    "source_system",
+    "source_sku",
+    "warehouse",
+    "description",
+    "snapshot_date",
+    "quantity",
+    "unit_cost",
+    "monthly_demand",
+    "safety_stock",
+    "last_movement"
+  ],
+  "title": "Holding",
+  "type": "object"
+}

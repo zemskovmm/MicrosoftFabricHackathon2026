@@ -1,0 +1,20 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "as_of_date": {
+      "format": "date",
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "previous_receipt": {
+      "default": "",
+      "title": "Previous Receipt",
+      "type": "string"
+    }
+  },
+  "required": [
+    "as_of_date"
+  ],
+  "title": "StageMessage",
+  "type": "object"
+}

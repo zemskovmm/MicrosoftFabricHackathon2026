@@ -1,0 +1,48 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "awaiting_human_approval",
+        "review_required"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "stage": {
+      "title": "Stage",
+      "type": "string"
+    },
+    "receipt": {
+      "title": "Receipt",
+      "type": "string"
+    },
+    "summary": {
+      "additionalProperties": true,
+      "title": "Summary",
+      "type": "object"
+    },
+    "audit": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Audit",
+      "type": "array"
+    }
+  },
+  "required": [
+    "status",
+    "run_id",
+    "stage",
+    "receipt",
+    "summary",
+    "audit"
+  ],
+  "title": "WorkflowOutcome",
+  "type": "object"
+}

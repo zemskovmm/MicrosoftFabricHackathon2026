@@ -1,0 +1,128 @@
+{
+  "$defs": {
+    "SupplierOffer": {
+      "additionalProperties": false,
+      "properties": {
+        "source_sku": {
+          "minLength": 1,
+          "title": "Source Sku",
+          "type": "string"
+        },
+        "manufacturer": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Manufacturer"
+        },
+        "manufacturer_part_number": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Manufacturer Part Number"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "pack_count": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Pack Count"
+        },
+        "unit_description": {
+          "minLength": 1,
+          "title": "Unit Description",
+          "type": "string"
+        },
+        "price_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Price Text"
+        },
+        "currency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Currency"
+        },
+        "source_quote": {
+          "minLength": 1,
+          "title": "Source Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_sku",
+        "manufacturer",
+        "manufacturer_part_number",
+        "description",
+        "pack_count",
+        "unit_description",
+        "price_text",
+        "currency",
+        "source_quote"
+      ],
+      "title": "SupplierOffer",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "supplier_name": {
+      "minLength": 1,
+      "title": "Supplier Name",
+      "type": "string"
+    },
+    "offers": {
+      "items": {
+        "$ref": "#/$defs/SupplierOffer"
+      },
+      "minItems": 1,
+      "title": "Offers",
+      "type": "array"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "supplier_name",
+    "offers",
+    "warnings"
+  ],
+  "title": "ExtractedDocument",
+  "type": "object"
+}

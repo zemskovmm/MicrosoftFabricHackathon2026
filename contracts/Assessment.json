@@ -1,0 +1,82 @@
+{
+  "$defs": {
+    "MatchSuggestion": {
+      "additionalProperties": false,
+      "properties": {
+        "source_reference": {
+          "title": "Source Reference",
+          "type": "string"
+        },
+        "canonical_sku": {
+          "title": "Canonical Sku",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "reason": {
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_reference",
+        "canonical_sku",
+        "confidence",
+        "reason"
+      ],
+      "title": "MatchSuggestion",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "receipt": {
+      "maxLength": 64,
+      "minLength": 64,
+      "title": "Receipt",
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "proceed",
+        "request_review"
+      ],
+      "title": "Disposition",
+      "type": "string"
+    },
+    "rationale": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "citations": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Citations",
+      "type": "array"
+    },
+    "match_suggestions": {
+      "items": {
+        "$ref": "#/$defs/MatchSuggestion"
+      },
+      "title": "Match Suggestions",
+      "type": "array"
+    }
+  },
+  "required": [
+    "receipt",
+    "disposition",
+    "rationale",
+    "citations"
+  ],
+  "title": "Assessment",
+  "type": "object"
+}

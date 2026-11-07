@@ -1,0 +1,252 @@
+[
+  {
+    "source_sku": "PART-001",
+    "description": "Industrial assembly 001 size 7 millimeter",
+    "canonical_sku": "PART-001"
+  },
+  {
+    "source_sku": "WMS-001",
+    "description": "Industrial assembly 001 size 7 mm",
+    "canonical_sku": "PART-001"
+  },
+  {
+    "source_sku": "PART-002",
+    "description": "Industrial assembly 002 size 14 millimeter",
+    "canonical_sku": "PART-002"
+  },
+  {
+    "source_sku": "WMS-002",
+    "description": "Industrial assembly 002 size 14 mm",
+    "canonical_sku": "PART-002"
+  },
+  {
+    "source_sku": "PART-003",
+    "description": "Industrial assembly 003 size 21 millimeter",
+    "canonical_sku": "PART-003"
+  },
+  {
+    "source_sku": "WMS-003",
+    "description": "Industrial assembly 003 size 21 mm",
+    "canonical_sku": "PART-003"
+  },
+  {
+    "source_sku": "PART-004",
+    "description": "Industrial assembly 004 size 28 millimeter",
+    "canonical_sku": "PART-004"
+  },
+  {
+    "source_sku": "WMS-004",
+    "description": "Industrial assembly 004 size 28 mm",
+    "canonical_sku": "PART-004"
+  },
+  {
+    "source_sku": "PART-005",
+    "description": "Industrial assembly 005 size 35 millimeter",
+    "canonical_sku": "PART-005"
+  },
+  {
+    "source_sku": "WMS-005",
+    "description": "Industrial assembly 005 size 35 mm",
+    "canonical_sku": "PART-005"
+  },
+  {
+    "source_sku": "PART-006",
+    "description": "Industrial assembly 006 size 42 millimeter",
+    "canonical_sku": "PART-006"
+  },
+  {
+    "source_sku": "WMS-006",
+    "description": "Industrial assembly 006 size 42 mm",
+    "canonical_sku": "PART-006"
+  },
+  {
+    "source_sku": "PART-007",
+    "description": "Industrial assembly 007 size 49 millimeter",
+    "canonical_sku": "PART-007"
+  },
+  {
+    "source_sku": "WMS-007",
+    "description": "Industrial assembly 007 size 49 mm",
+    "canonical_sku": "PART-007"
+  },
+  {
+    "source_sku": "PART-008",
+    "description": "Industrial assembly 008 size 56 millimeter",
+    "canonical_sku": "PART-008"
+  },
+  {
+    "source_sku": "WMS-008",
+    "description": "Industrial assembly 008 size 56 mm",
+    "canonical_sku": "PART-008"
+  },
+  {
+    "source_sku": "PART-009",
+    "description": "Industrial assembly 009 size 63 millimeter",
+    "canonical_sku": "PART-009"
+  },
+  {
+    "source_sku": "WMS-009",
+    "description": "Industrial assembly 009 size 63 mm",
+    "canonical_sku": "PART-009"
+  },
+  {
+    "source_sku": "PART-010",
+    "description": "Industrial assembly 010 size 70 millimeter",
+    "canonical_sku": "PART-010"
+  },
+  {
+    "source_sku": "WMS-010",
+    "description": "Industrial assembly 010 size 70 mm",
+    "canonical_sku": "PART-010"
+  },
+  {
+    "source_sku": "PART-011",
+    "description": "Industrial assembly 011 size 77 millimeter",
+    "canonical_sku": "PART-011"
+  },
+  {
+    "source_sku": "WMS-011",
+    "description": "Industrial assembly 011 size 77 mm",
+    "canonical_sku": "PART-011"
+  },
+  {
+    "source_sku": "PART-012",
+    "description": "Industrial assembly 012 size 84 millimeter",
+    "canonical_sku": "PART-012"
+  },
+  {
+    "source_sku": "WMS-012",
+    "description": "Industrial assembly 012 size 84 mm",
+    "canonical_sku": "PART-012"
+  },
+  {
+    "source_sku": "PART-013",
+    "description": "Industrial assembly 013 size 91 millimeter",
+    "canonical_sku": "PART-013"
+  },
+  {
+    "source_sku": "WMS-013",
+    "description": "Industrial assembly 013 size 91 mm",
+    "canonical_sku": "PART-013"
+  },
+  {
+    "source_sku": "PART-014",
+    "description": "Industrial assembly 014 size 98 millimeter",
+    "canonical_sku": "PART-014"
+  },
+  {
+    "source_sku": "WMS-014",
+    "description": "Industrial assembly 014 size 98 mm",
+    "canonical_sku": "PART-014"
+  },
+  {
+    "source_sku": "PART-015",
+    "description": "Industrial assembly 015 size 105 millimeter",
+    "canonical_sku": "PART-015"
+  },
+  {
+    "source_sku": "WMS-015",
+    "description": "Industrial assembly 015 size 105 mm",
+    "canonical_sku": "PART-015"
+  },
+  {
+    "source_sku": "PART-016",
+    "description": "Industrial assembly 016 size 112 millimeter",
+    "canonical_sku": "PART-016"
+  },
+  {
+    "source_sku": "WMS-016",
+    "description": "Industrial assembly 016 size 112 mm",
+    "canonical_sku": "PART-016"
+  },
+  {
+    "source_sku": "PART-017",
+    "description": "Industrial assembly 017 size 119 millimeter",
+    "canonical_sku": "PART-017"
+  },
+  {
+    "source_sku": "WMS-017",
+    "description": "Industrial assembly 017 size 119 mm",
+    "canonical_sku": "PART-017"
+  },
+  {
+    "source_sku": "PART-018",
+    "description": "Industrial assembly 018 size 126 millimeter",
+    "canonical_sku": "PART-018"
+  },
+  {
+    "source_sku": "WMS-018",
+    "description": "Industrial assembly 018 size 126 mm",
+    "canonical_sku": "PART-018"
+  },
+  {
+    "source_sku": "PART-019",
+    "description": "Industrial assembly 019 size 133 millimeter",
+    "canonical_sku": "PART-019"
+  },
+  {
+    "source_sku": "WMS-019",
+    "description": "Industrial assembly 019 size 133 mm",
+    "canonical_sku": "PART-019"
+  },
+  {
+    "source_sku": "PART-020",
+    "description": "Industrial assembly 020 size 140 millimeter",
+    "canonical_sku": "PART-020"
+  },
+  {
+    "source_sku": "WMS-020",
+    "description": "Industrial assembly 020 size 140 mm",
+    "canonical_sku": "PART-020"
+  },
+  {
+    "source_sku": "PART-021",
+    "description": "Industrial assembly 021 size 147 millimeter",
+    "canonical_sku": "PART-021"
+  },
+  {
+    "source_sku": "WMS-021",
+    "description": "Industrial assembly 021 size 147 mm",
+    "canonical_sku": "PART-021"
+  },
+  {
+    "source_sku": "PART-022",
+    "description": "Industrial assembly 022 size 154 millimeter",
+    "canonical_sku": "PART-022"
+  },
+  {
+    "source_sku": "WMS-022",
+    "description": "Industrial assembly 022 size 154 mm",
+    "canonical_sku": "PART-022"
+  },
+  {
+    "source_sku": "PART-023",
+    "description": "Industrial assembly 023 size 161 millimeter",
+    "canonical_sku": "PART-023"
+  },
+  {
+    "source_sku": "WMS-023",
+    "description": "Industrial assembly 023 size 161 mm",
+    "canonical_sku": "PART-023"
+  },
+  {
+    "source_sku": "PART-024",
+    "description": "Industrial assembly 024 size 168 millimeter",
+    "canonical_sku": "PART-024"
+  },
+  {
+    "source_sku": "WMS-024",
+    "description": "Industrial assembly 024 size 168 mm",
+    "canonical_sku": "PART-024"
+  },
+  {
+    "source_sku": "UNKNOWN",
+    "description": "unidentified mystery component",
+    "canonical_sku": null
+  },
+  {
+    "source_sku": "UNMATCHED",
+    "description": "garden chair furniture",
+    "canonical_sku": null
+  }
+]

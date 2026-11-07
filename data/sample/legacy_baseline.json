@@ -1,0 +1,102 @@
+{
+  "as_of_date": "2026-10-31",
+  "positions": [
+    {
+      "canonical_sku": "PART-001",
+      "eo_value": "2400"
+    },
+    {
+      "canonical_sku": "PART-002",
+      "eo_value": "3800"
+    },
+    {
+      "canonical_sku": "PART-003",
+      "eo_value": "5500"
+    },
+    {
+      "canonical_sku": "PART-004",
+      "eo_value": "7500"
+    },
+    {
+      "canonical_sku": "PART-005",
+      "eo_value": "9800"
+    },
+    {
+      "canonical_sku": "PART-006",
+      "eo_value": "15200"
+    },
+    {
+      "canonical_sku": "PART-007",
+      "eo_value": "15300"
+    },
+    {
+      "canonical_sku": "PART-008",
+      "eo_value": "18500"
+    },
+    {
+      "canonical_sku": "PART-009",
+      "eo_value": "22000"
+    },
+    {
+      "canonical_sku": "PART-010",
+      "eo_value": "25800"
+    },
+    {
+      "canonical_sku": "PART-011",
+      "eo_value": "29900"
+    },
+    {
+      "canonical_sku": "PART-012",
+      "eo_value": "39200"
+    },
+    {
+      "canonical_sku": "PART-013",
+      "eo_value": "39000"
+    },
+    {
+      "canonical_sku": "PART-014",
+      "eo_value": "44000"
+    },
+    {
+      "canonical_sku": "PART-015",
+      "eo_value": "49300"
+    },
+    {
+      "canonical_sku": "PART-016",
+      "eo_value": "54900"
+    },
+    {
+      "canonical_sku": "PART-017",
+      "eo_value": "60800"
+    },
+    {
+      "canonical_sku": "PART-018",
+      "eo_value": "74000"
+    },
+    {
+      "canonical_sku": "PART-019",
+      "eo_value": "73500"
+    },
+    {
+      "canonical_sku": "PART-020",
+      "eo_value": "80300"
+    },
+    {
+      "canonical_sku": "PART-021",
+      "eo_value": "87400"
+    },
+    {
+      "canonical_sku": "PART-022",
+      "eo_value": "94800"
+    },
+    {
+      "canonical_sku": "PART-023",
+      "eo_value": "102500"
+    },
+    {
+      "canonical_sku": "PART-024",
+      "eo_value": "119600"
+    }
+  ],
+  "note": "Synthetic legacy-format reference. Not a real historic ERP report."
+}

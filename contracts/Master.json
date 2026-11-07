@@ -1,0 +1,55 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "canonical_sku": {
+      "minLength": 1,
+      "title": "Canonical Sku",
+      "type": "string"
+    },
+    "description": {
+      "minLength": 1,
+      "title": "Description",
+      "type": "string"
+    },
+    "manufacturer": {
+      "default": "",
+      "title": "Manufacturer",
+      "type": "string"
+    },
+    "manufacturer_part_number": {
+      "default": "",
+      "title": "Manufacturer Part Number",
+      "type": "string"
+    },
+    "category": {
+      "default": "general",
+      "title": "Category",
+      "type": "string"
+    },
+    "lifecycle": {
+      "default": "active",
+      "enum": [
+        "active",
+        "obsolete"
+      ],
+      "title": "Lifecycle",
+      "type": "string"
+    },
+    "transferable": {
+      "default": false,
+      "title": "Transferable",
+      "type": "boolean"
+    },
+    "returnable": {
+      "default": false,
+      "title": "Returnable",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "canonical_sku",
+    "description"
+  ],
+  "title": "Master",
+  "type": "object"
+}

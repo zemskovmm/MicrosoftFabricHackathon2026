@@ -1,0 +1,73 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "as_of_date": {
+      "format": "date",
+      "title": "As Of Date",
+      "type": "string"
+    },
+    "agent_id": {
+      "title": "Agent Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "review_required"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "input_version": {
+      "default": "1",
+      "title": "Input Version",
+      "type": "string"
+    },
+    "output_version": {
+      "default": "1",
+      "title": "Output Version",
+      "type": "string"
+    },
+    "source_references": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source References",
+      "type": "array"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "exception_flags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Exception Flags",
+      "type": "array"
+    },
+    "payload": {
+      "additionalProperties": true,
+      "title": "Payload",
+      "type": "object"
+    }
+  },
+  "required": [
+    "run_id",
+    "as_of_date",
+    "agent_id",
+    "status",
+    "source_references",
+    "confidence",
+    "exception_flags",
+    "payload"
+  ],
+  "title": "Handoff",
+  "type": "object"
+}

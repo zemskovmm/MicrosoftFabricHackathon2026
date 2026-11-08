@@ -1,0 +1,74 @@
+[
+  {
+    "document_id": "001-table-01.md",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-01-01-1",
+        "manufacturer": "SKF",
+        "manufacturer_part_number": "6205-2RSH",
+        "unit_description": "each",
+        "pack_count": 1,
+        "price_text": "3.40",
+        "currency": "EUR"
+      },
+      {
+        "source_sku": "NL-08-01-2",
+        "manufacturer": "SKF",
+        "manufacturer_part_number": "LGMT2/1",
+        "unit_description": "can",
+        "pack_count": 1,
+        "price_text": "86.05",
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "document_id": "002-card-01.md",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-04-02-1",
+        "manufacturer": "Gates",
+        "manufacturer_part_number": "500-5M-15",
+        "unit_description": "each",
+        "pack_count": 1,
+        "price_text": "43.40",
+        "currency": "EUR"
+      },
+      {
+        "source_sku": "NL-11-02-2",
+        "manufacturer": "MANN-FILTER",
+        "manufacturer_part_number": "W719/30",
+        "unit_description": "each",
+        "pack_count": 1,
+        "price_text": "126.05",
+        "currency": "EUR"
+      }
+    ]
+  },
+  {
+    "document_id": "003-quote-01.md",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-07-03-1",
+        "manufacturer": "Siemens",
+        "manufacturer_part_number": "6ES7214-1AG40-0XB0",
+        "unit_description": "each",
+        "pack_count": 1,
+        "price_text": "83.40",
+        "currency": "EUR"
+      },
+      {
+        "source_sku": "NL-14-03-2",
+        "manufacturer": "Generic (synthetic)",
+        "manufacturer_part_number": "GEN-WIPE-BLUE",
+        "unit_description": "pack of 10",
+        "pack_count": 10,
+        "price_text": "166.05",
+        "currency": "EUR"
+      }
+    ]
+  }
+]

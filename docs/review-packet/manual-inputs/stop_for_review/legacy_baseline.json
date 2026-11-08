@@ -1,0 +1,17 @@
+{
+  "as_of_date": "2026-10-31",
+  "positions": [
+    {
+      "canonical_sku": "BEARING",
+      "eo_value": "1560.00"
+    },
+    {
+      "canonical_sku": "BELT",
+      "eo_value": "600.00"
+    },
+    {
+      "canonical_sku": "CPU",
+      "eo_value": "1000.00"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "source_run": "e57b01361f8104298b3e134f",
+  "raw_artifacts": "output/connected-demo/20261108T102736Z-7dbd9c11",
+  "original_compact_results": "../experiments/connected-demo-results.json",
+  "files": {
+    "manual-inputs/accepted_scope/SYNTHETIC_DATA.md": "b7b8de98501c6d2c6a7c1c2bc56bced523adc0a6c102b66515810fab74612e79",
+    "manual-inputs/accepted_scope/holdings.csv": "5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+    "manual-inputs/accepted_scope/labels.json": "6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+    "manual-inputs/accepted_scope/legacy_baseline.json": "4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+    "manual-inputs/accepted_scope/sku_master.json": "e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+    "manual-inputs/documents/001-table-01.md": "0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+    "manual-inputs/documents/002-card-01.md": "ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+    "manual-inputs/documents/003-quote-01.md": "e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+    "manual-inputs/policy.json": "52094dfac806f6bd303082473fc56416be908b3711af137d12df8eb72645ce20",
+    "manual-inputs/stop_for_review/SYNTHETIC_DATA.md": "b7b8de98501c6d2c6a7c1c2bc56bced523adc0a6c102b66515810fab74612e79",
+    "manual-inputs/stop_for_review/holdings.csv": "0242977be5c1bdc4b766589866216aa08033e72213d9eef515ec0b3d8b2973d9",
+    "manual-inputs/stop_for_review/labels.json": "6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+    "manual-inputs/stop_for_review/legacy_baseline.json": "4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+    "manual-inputs/stop_for_review/sku_master.json": "e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+    "assisted/before-approval.json": "6f98bdde6e71ef3a3221d5905fcd0650307faf4a2313b103851dd6546c19636f",
+    "assisted/extraction.json": "dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a",
+    "key/answer-and-scoring-key.md": "a4a846e84135ca6cd3938464cb4b03530a1493a80d5b64399722bb0e7bb42962",
+    "key/extraction-oracle.json": "e08c4a3f7202a4c6167114d3f9121d72214f5607fb5445b779dc45cde1f3b093"
+  }
+}

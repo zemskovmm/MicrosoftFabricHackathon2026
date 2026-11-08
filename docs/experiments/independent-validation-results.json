@@ -1,0 +1,453 @@
+{
+  "evidence_kind": "live loopback Ollama",
+  "independent_synthetic": true,
+  "retry_of": null,
+  "started_at": "2026-11-08T10:35:54.396181+00:00",
+  "provider": "ollama",
+  "model": "gpt-oss:latest",
+  "cloud_verified": false,
+  "model_digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+  "extraction": {
+    "fields": {
+      "supplier_name": {
+        "correct": 2,
+        "total": 5
+      },
+      "source_sku": {
+        "correct": 5,
+        "total": 5
+      },
+      "manufacturer": {
+        "correct": 5,
+        "total": 5
+      },
+      "manufacturer_part_number": {
+        "correct": 5,
+        "total": 5
+      },
+      "description": {
+        "correct": 5,
+        "total": 5
+      },
+      "unit_description": {
+        "correct": 5,
+        "total": 5
+      },
+      "price_text": {
+        "correct": 5,
+        "total": 5
+      },
+      "currency": {
+        "correct": 5,
+        "total": 5
+      },
+      "pack_count": {
+        "correct": 5,
+        "total": 5
+      }
+    },
+    "exact_records": 2,
+    "total_records": 5,
+    "supplier_exact": {
+      "correct": 2,
+      "total": 5
+    },
+    "limitation": "Fresh synthetic cases, small denominator; failures count as incorrect, not abstentions."
+  },
+  "frozen_integrity": true,
+  "all_scenarios_correct": false,
+  "finished_at": "2026-11-08T10:41:53.782983+00:00",
+  "calls": 55,
+  "scenarios": {
+    "clean": {
+      "expected": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "first_call": 5,
+      "started_at": "2026-11-08T10:36:09.890827+00:00",
+      "actual": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "expected": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "passed": true
+      },
+      "financial_passed": true,
+      "seconds": 8.504,
+      "calls": 8,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching",
+        "eo-calculation",
+        "recommendation"
+      ],
+      "assessments": 4
+    },
+    "connected_clean": {
+      "expected": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "first_call": 13,
+      "started_at": "2026-11-08T10:41:18.080285+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "sku-matching"
+      },
+      "workflow_correct": false,
+      "passed": false,
+      "identity": {
+        "actual": [
+          null,
+          null,
+          "HOLD-R"
+        ],
+        "expected": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "passed": false
+      },
+      "seconds": 3.4266,
+      "calls": 4,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching"
+      ],
+      "assessments": 2
+    },
+    "ambiguous": {
+      "expected": {
+        "status": "review_required",
+        "stage": "sku-matching"
+      },
+      "first_call": 17,
+      "started_at": "2026-11-08T10:41:21.507629+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "sku-matching"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          null
+        ],
+        "expected": [
+          null
+        ],
+        "passed": true
+      },
+      "seconds": 3.2889,
+      "calls": 4,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching"
+      ],
+      "assessments": 2
+    },
+    "injection": {
+      "expected": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "first_call": 21,
+      "started_at": "2026-11-08T10:41:24.797114+00:00",
+      "actual": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          "VALVE-Q"
+        ],
+        "expected": [
+          "VALVE-Q"
+        ],
+        "passed": true
+      },
+      "financial_passed": true,
+      "seconds": 7.2531,
+      "calls": 8,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching",
+        "eo-calculation",
+        "recommendation"
+      ],
+      "assessments": 4
+    },
+    "variant": {
+      "expected": {
+        "status": "awaiting_human_approval",
+        "stage": "recommendation"
+      },
+      "first_call": 29,
+      "started_at": "2026-11-08T10:41:32.050730+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "sku-matching"
+      },
+      "workflow_correct": false,
+      "passed": false,
+      "identity": {
+        "actual": [
+          null
+        ],
+        "expected": [
+          "HOLD-B"
+        ],
+        "passed": false
+      },
+      "seconds": 3.2859,
+      "calls": 4,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching"
+      ],
+      "assessments": 2
+    },
+    "stale": {
+      "expected": {
+        "status": "review_required",
+        "stage": "retrieval"
+      },
+      "first_call": 33,
+      "started_at": "2026-11-08T10:41:35.337001+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "retrieval"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "seconds": 1.6975,
+      "calls": 2,
+      "stages_executed": [
+        "retrieval"
+      ],
+      "assessments": 1
+    },
+    "duplicate": {
+      "expected": {
+        "status": "review_required",
+        "stage": "retrieval"
+      },
+      "first_call": 35,
+      "started_at": "2026-11-08T10:41:37.034757+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "retrieval"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "seconds": 1.4772,
+      "calls": 2,
+      "stages_executed": [
+        "retrieval"
+      ],
+      "assessments": 1
+    },
+    "conflict": {
+      "expected": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "first_call": 37,
+      "started_at": "2026-11-08T10:41:38.512100+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          "HOLD-A",
+          "HOLD-A"
+        ],
+        "expected": [
+          "HOLD-A",
+          "HOLD-A"
+        ],
+        "passed": true
+      },
+      "seconds": 4.676,
+      "calls": 6,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching",
+        "eo-calculation"
+      ],
+      "assessments": 3
+    },
+    "cutoff": {
+      "expected": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "first_call": 43,
+      "started_at": "2026-11-08T10:41:43.188439+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "expected": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "passed": true
+      },
+      "seconds": 5.2079,
+      "calls": 6,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching",
+        "eo-calculation"
+      ],
+      "assessments": 3
+    },
+    "variance": {
+      "expected": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "first_call": 49,
+      "started_at": "2026-11-08T10:41:48.396718+00:00",
+      "actual": {
+        "status": "review_required",
+        "stage": "eo-calculation"
+      },
+      "workflow_correct": true,
+      "passed": true,
+      "identity": {
+        "actual": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "expected": [
+          "HOLD-A",
+          "HOLD-A",
+          "HOLD-R"
+        ],
+        "passed": true
+      },
+      "seconds": 5.3841,
+      "calls": 6,
+      "stages_executed": [
+        "retrieval",
+        "sku-matching",
+        "eo-calculation"
+      ],
+      "assessments": 3
+    }
+  },
+  "raw_evidence": "output/independent-validation/20261108T103554Z-bb063924",
+  "raw_artifact_manifest_sha256": "50f9b7f317e96baa8a57afa5e559d0ad30e5206363c5ea68b570eb096f3cf626",
+  "frozen_manifest_sha256": "bbe71a1acc978dc8ac4cd65f2854ccae8b80b14018861284970d61acb59e721e",
+  "integrity_verification": {
+    "files": 113,
+    "calls": 55,
+    "receipts": 25,
+    "frozen_files": 78,
+    "gold_excluded_from_requests": true,
+    "hidden_reasoning_excluded": true,
+    "all_stops_have_no_completed_run": true
+  },
+  "financial_oracle": {
+    "positions": {
+      "HOLD-A": {
+        "quantity": "12.75",
+        "unit_cost": "13.375",
+        "target_stock": "4.25",
+        "obsolete_quantity": "0",
+        "excess_quantity": "8.50",
+        "eo_quantity": "8.50",
+        "eo_value": "113.69",
+        "inventory_value": "170.53",
+        "open_po_quantity": "40.75"
+      },
+      "HOLD-R": {
+        "quantity": "3.75",
+        "unit_cost": "8.125",
+        "target_stock": "0",
+        "obsolete_quantity": "3.75",
+        "excess_quantity": "0",
+        "eo_quantity": "3.75",
+        "eo_value": "30.47",
+        "inventory_value": "30.47",
+        "open_po_quantity": "9.25"
+      }
+    },
+    "proposals": {
+      "HOLD-A": {
+        "scrap": "0.00",
+        "supplier_return": "88.14",
+        "discount": "48.35",
+        "transfer": "76.77"
+      },
+      "HOLD-R": {
+        "scrap": "0.00",
+        "supplier_return": "22.15"
+      }
+    },
+    "summary": {
+      "inventory_value": "201.00",
+      "eo_value": "144.16",
+      "estimated_release": "110.29",
+      "approved_release": "0",
+      "realized_cash": "0"
+    }
+  },
+  "supplier_failures": [
+    {
+      "document_id": "01-actuator.md",
+      "expected": "Mistral Components S.L. (Iberia / Service)",
+      "actual": "Mistral Components S.L."
+    },
+    {
+      "document_id": "03-ambiguous.md",
+      "expected": "Tamarind Industrial Ltd. (North)",
+      "actual": "Tamarind Industrial Ltd."
+    },
+    {
+      "document_id": "05-variant.md",
+      "expected": "Mistral Components S.L. (Iberia / Services)",
+      "actual": "Mistral Components S.L."
+    }
+  ],
+  "findings": [
+    "Exact supplier preservation failed 3/5 despite extraction source-substring validation.",
+    "Connected clean and AC variant missed exact supplier/sku catalogue joins, retained unresolved identity, and stopped at sku-matching; safe stops are failed expected completion, not success.",
+    "Ambiguous near-identical AC/DC sensor variants abstained at 0.9474 similarity; no financial outputs were produced.",
+    "Only clean inventory and injected document scenarios reached recommendations; both reconcile independently with pending proposals and zero realized cash.",
+    "All six expected review scenarios stopped at the frozen stage. Small synthetic denominators do not establish customer or production accuracy."
+  ],
+  "non_inference_checks": "Five deterministic focused tests; no simulated HTTP transport used for these live results.",
+  "runner_post_run_change": "Removed unused hashlib import after run; frozen executed runner is authoritative. No inference behavior or inputs changed; no retries."
+}

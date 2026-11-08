@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "evidence_kind": "live loopback Ollama",
+  "started_at": "2026-11-08T10:27:36.268669+00:00",
+  "model": "gpt-oss:latest",
+  "provider": "ollama",
+  "endpoint": "http://127.0.0.1:11434",
+  "retry_of": null,
+  "simulated_reviewer": true,
+  "independent_holdout": false,
+  "cloud_verified": false,
+  "model_digest": "f38aa0c53da5f8c49d08c43a99df24ff53167fe68e24664a7777288e7656fdfe",
+  "completed": {
+    "run_id": "e57b01361f8104298b3e134f",
+    "eo_value": "3160.00",
+    "estimated_release": "2516.00",
+    "simulated_approved_release": "1196.00",
+    "realized_cash": 0,
+    "audit_events": 9,
+    "audit_head": "1aeebdef624a8b25171f09787be8a6321e460002c015992d521a438a076d9615",
+    "duplicate_decisions_rejected": 2
+  },
+  "stopped": {
+    "status": "review_required",
+    "stages_executed": [
+      "retrieval"
+    ],
+    "recommendations": 0,
+    "saved_completed_run": false
+  },
+  "finished_at": "2026-11-08T10:28:08.672978+00:00",
+  "calls": 16,
+  "operations": [
+    {
+      "operation": "extraction",
+      "started_at": "2026-11-08T10:27:36.312003+00:00",
+      "first_call": 0,
+      "passed": true,
+      "finished_at": "2026-11-08T10:27:59.708288+00:00",
+      "seconds": 23.3963,
+      "call_count": 6
+    },
+    {
+      "operation": "accepted_scope",
+      "started_at": "2026-11-08T10:27:59.709553+00:00",
+      "first_call": 6,
+      "passed": true,
+      "finished_at": "2026-11-08T10:28:07.172846+00:00",
+      "seconds": 7.4633,
+      "call_count": 8
+    },
+    {
+      "operation": "stop_for_review",
+      "started_at": "2026-11-08T10:28:07.183192+00:00",
+      "first_call": 14,
+      "passed": true,
+      "finished_at": "2026-11-08T10:28:08.669758+00:00",
+      "seconds": 1.4866,
+      "call_count": 2
+    }
+  ],
+  "raw_artifacts": "output/connected-demo/20261108T102736Z-7dbd9c11",
+  "fingerprints": {
+    "artifact-manifest.json": "cca0a174c6e1f20ddccdae6c9df840dca1f70ed06a2512382a1593f00019f6ba",
+    "frozen-manifest.json": "a35daa01deaadccb1e8ca132eb0679fdc63da586bb2182a25b51812a0bdf472d",
+    "prompts.json": "b8686fc19836a82941268b41c654caeedd61d24a5162d73d6dddea439a6270c0",
+    "calls.json": "a6fce1197b43504d0a9d5879b99bc62e2e6ec4c2082b1d84c64c598bdf3dfdaa",
+    "extraction.json": "dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a",
+    "before-approval.json": "6f98bdde6e71ef3a3221d5905fcd0650307faf4a2313b103851dd6546c19636f",
+    "after-simulated-approval.json": "ccec84c393b587abca16d4ebd5a980005f692b40b9f3b384a417f884e4cd3548",
+    "audit-after-simulated-approval.json": "3d058f6c2870c0646148992a372572afedaa880f13cf0481047994bc50ed5158",
+    "frozen-code/scripts/connected_demo_experiment.py": "ae7b1ca195ef9f6a22f8b74529f633256012ea1f3750f222f9ae09ca2f8264d5"
+  },
+  "coverage": {
+    "documents": 3,
+    "offers": 6,
+    "layouts": [
+      "table",
+      "product cards",
+      "numbered offers"
+    ],
+    "accepted_physical_holdings": 4,
+    "quarantined_holdings": 1,
+    "canonical_positions": 3,
+    "pending_alternatives": 10,
+    "holdout": false,
+    "customer_approval": false,
+    "erp_actions": false
+  },
+  "verification": {
+    "simulated_transport_tests": 4,
+    "full_suite_tests": 36,
+    "ruff": "passed"
+  }
+}

@@ -79,6 +79,8 @@ The client performs initialization, discovers the published tool and validates t
 
 ## Verification
 
+Future planning: [SKU detection improvements](docs/architecture.md#future-improvements-sku-detection-and-reconciliation) covers evaluating regular expressions and conditional random fields (CRF), with held-out validation before adoption. This is future work and is not implemented in the MVP.
+
 ```sh
 .venv/bin/ruff check inventorypulse tests
 .venv/bin/pytest -q

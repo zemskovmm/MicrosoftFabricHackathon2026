@@ -1,0 +1,28 @@
+[
+  {
+    "source_sku": "BEARING",
+    "description": "SKF 6205-2RSH",
+    "manufacturer": "SKF",
+    "manufacturer_part_number": "6205-2RSH",
+    "canonical_sku": "BEARING"
+  },
+  {
+    "source_sku": "BELT",
+    "description": "Gates 500-5M-15",
+    "manufacturer": "Gates",
+    "manufacturer_part_number": "500-5M-15",
+    "canonical_sku": "BELT"
+  },
+  {
+    "source_sku": "CPU",
+    "description": "Siemens 6ES7214-1AG40-0XB0",
+    "manufacturer": "Siemens",
+    "manufacturer_part_number": "6ES7214-1AG40-0XB0",
+    "canonical_sku": "CPU"
+  },
+  {
+    "source_sku": "UNKNOWN",
+    "description": "Uncatalogued",
+    "canonical_sku": null
+  }
+]

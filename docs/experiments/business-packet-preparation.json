@@ -1,0 +1,38 @@
+{
+  "kind": "preparation dry run only",
+  "checked_at": "2026-11-08T11:09:36.741206+00:00",
+  "scenario": "connected-demo EUR, cutoff 2026-10-31",
+  "source_run": "e57b01361f8104298b3e134f",
+  "packet_manifest_sha256": "a63de4c11db67dc85cb95c506be60cb31e7b1a4d2a46a90d184585146ec5b1de",
+  "verifier_sha256": "abab6906f205c3cf8d206d026391d1bf9ca4bbd94a511e44df2bd657a78092b3",
+  "checks": {
+    "packet_fingerprints": "passed",
+    "original_local_frozen_inputs_and_code": "passed",
+    "blank_observation_forms": "passed",
+    "six_offer_fields_and_original_quotes": "passed",
+    "independent_decimal_arithmetic_vs_archived_and_current_implementation": "passed",
+    "same_cutoff_baseline": "passed",
+    "all_stale_input_exclusion": "passed",
+    "focused_connected_tests": 4,
+    "ruff": "passed"
+  },
+  "worked_eur": {
+    "inventory": "4400.00",
+    "eo": "3160.00",
+    "conditional_exclusive_recovery": "2516.00",
+    "approved": "0.00",
+    "realized_cash": "0.00"
+  },
+  "reviewers_observed": 0,
+  "timed_review_sessions": 0,
+  "customer_validation": false,
+  "economics_validated": false,
+  "time_savings_claim": false,
+  "raw_local_evidence_present": true,
+  "limitations": [
+    "No human answer or timing form completed.",
+    "Archived outputs were supplied, not newly inferred.",
+    "Exact same-case manual-first design has practice and order effects.",
+    "Business owners must validate scope, eligibility and economics before actual approval."
+  ]
+}

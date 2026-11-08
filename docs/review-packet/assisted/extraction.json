@@ -1,0 +1,94 @@
+[
+  {
+    "document_id": "001-table-01.md",
+    "source_sha256": "0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-01-01-1",
+        "manufacturer": "SKF",
+        "manufacturer_part_number": "6205-2RSH",
+        "description": "Deep groove ball bearing, 25 x 52 x 15 mm, 2RSH seals",
+        "pack_count": 1,
+        "unit_description": "each",
+        "price_text": "3.40",
+        "currency": "EUR",
+        "source_quote": "| 1 | Mechanical | Deep groove ball bearing, 25 x 52 x 15 mm, 2RSH seals | SKF | 6205-2RSH | NL-01-01-1 | each | 3.40 |"
+      },
+      {
+        "source_sku": "NL-08-01-2",
+        "manufacturer": "SKF",
+        "manufacturer_part_number": "LGMT2/1",
+        "description": "LGMT 2 general-purpose bearing grease, 1 kg can",
+        "pack_count": 1,
+        "unit_description": "can",
+        "price_text": "86.05",
+        "currency": "EUR",
+        "source_quote": "| 2 | Consumables | LGMT 2 general-purpose bearing grease, 1 kg can | SKF | LGMT2/1 | NL-08-01-2 | can | 86.05 |"
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "document_id": "002-card-01.md",
+    "source_sha256": "ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-04-02-1",
+        "manufacturer": "Gates",
+        "manufacturer_part_number": "500-5M-15",
+        "description": "Synchronous timing belt, 500 mm pitch length, 5M profile, 15 mm width",
+        "pack_count": 1,
+        "unit_description": "each",
+        "price_text": "43.40",
+        "currency": "EUR",
+        "source_quote": "## Item 1: Synchronous timing belt, 500 mm pitch length, 5M profile, 15 mm width\n\n- Product family: Mechanical\n- Brand / maker: Gates\n- Manufacturer part number: 500-5M-15\n- Our catalogue code: `NL-04-02-1`\n- Supplied as: each\n- Indicative price: EUR 43.40 per stated unit"
+      },
+      {
+        "source_sku": "NL-11-02-2",
+        "manufacturer": "MANN-FILTER",
+        "manufacturer_part_number": "W719/30",
+        "description": "Spin-on oil filter, model W719/30",
+        "pack_count": 1,
+        "unit_description": "each",
+        "price_text": "126.05",
+        "currency": "EUR",
+        "source_quote": "## Item 2: Spin-on oil filter, model W719/30\n\n- Product family: Consumables\n- Brand / maker: MANN-FILTER\n- Manufacturer part number: W719/30\n- Our catalogue code: `NL-11-02-2`\n- Supplied as: each\n- Indicative price: EUR 126.05 per stated unit\n\nAvailability is not confirmed; request a formal quotation before purchase."
+      }
+    ],
+    "warnings": []
+  },
+  {
+    "document_id": "003-quote-01.md",
+    "source_sha256": "e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+    "supplier_name": "Northline Industrial Supply",
+    "offers": [
+      {
+        "source_sku": "NL-07-03-1",
+        "manufacturer": "Siemens",
+        "manufacturer_part_number": "6ES7214-1AG40-0XB0",
+        "description": "SIMATIC S7-1200 CPU 1214C, DC/DC/DC (Electrical)",
+        "pack_count": 1,
+        "unit_description": "each",
+        "price_text": "83.40",
+        "currency": "EUR",
+        "source_quote": "1. **SIMATIC S7-1200 CPU 1214C, DC/DC/DC** (Electrical)\n   Maker: Siemens | MPN: 6ES7214-1AG40-0XB0\n   Seller item: NL-07-03-1 | Pack: each\n   Price: EUR 83.40 per stated pack/unit"
+      },
+      {
+        "source_sku": "NL-14-03-2",
+        "manufacturer": "Generic (synthetic)",
+        "manufacturer_part_number": "GEN-WIPE-BLUE",
+        "description": "Blue workshop wiping cloth, recycled cotton blend; description incomplete",
+        "pack_count": 10,
+        "unit_description": "pack of 10",
+        "price_text": "166.05",
+        "currency": "EUR",
+        "source_quote": "2. **Blue workshop wiping cloth, recycled cotton blend; description incomplete** (Consumables)\n   Maker: Generic (synthetic) | MPN: GEN-WIPE-BLUE\n   Seller item: NL-14-03-2 | Pack: pack of 10\n   Price: EUR 166.05 per stated pack/unit\n\nPrices exclude transport and VAT. Valid for 14 days; delivery date and availability subject to written confirmation."
+      }
+    ],
+    "warnings": [
+      "Incomplete description"
+    ]
+  }
+]

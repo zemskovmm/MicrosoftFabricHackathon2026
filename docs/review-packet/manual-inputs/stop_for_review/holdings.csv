@@ -1,0 +1,6 @@
+source_system,supplier_name,source_sku,physical_holding_id,warehouse,description,snapshot_date,quantity,unit_cost,monthly_demand,safety_stock,last_movement,open_po_quantity
+ERP-SYNTHETIC,Northline Industrial Supply,NL-01-01-1,PHYSICAL-1,Depot-1,Unresolved supplier item,2026-10-01,120,12,20,10,2026-09-01,5
+ERP-SYNTHETIC,Northline Industrial Supply,NL-01-01-1,PHYSICAL-2,Depot-2,Unresolved supplier item,2026-10-01,80,12,20,10,2026-09-01,0
+ERP-SYNTHETIC,Northline Industrial Supply,NL-04-02-1,PHYSICAL-3,Depot-3,Unresolved supplier item,2026-10-01,50,20,5,5,2026-09-01,0
+ERP-SYNTHETIC,Northline Industrial Supply,NL-07-03-1,PHYSICAL-4,Depot-4,Unresolved supplier item,2026-10-01,10,100,0,0,2024-01-01,0
+ERP-SYNTHETIC,Northline Industrial Supply,NL-01-01-1,PHYSICAL-5,Depot-5,Unresolved supplier item,2026-10-01,999,12,20,10,2026-09-01,0

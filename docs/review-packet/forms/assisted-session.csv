@@ -1,0 +1,2 @@
+reviewer_alias,phase,packet_version,start_utc,end_utc,elapsed_seconds,pause_seconds,pause_reason,active_seconds,tools_used,prior_scenario_familiarity,assistance_or_interruptions,all_stale_action,total_inventory_eur,total_eo_eur,total_estimated_recovery_eur,approved_eur,realized_cash_eur,baseline_variance_eur,ready_for_real_approval,notes
+,assisted,,,,,,,,,,,,,,,,,,,

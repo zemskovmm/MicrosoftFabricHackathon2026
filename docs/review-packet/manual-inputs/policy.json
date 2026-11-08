@@ -1,0 +1,14 @@
+{
+  "version": "sample-policy-v1",
+  "horizon_months": "3",
+  "obsolete_after_days": 365,
+  "max_feed_age_days": 1,
+  "match_threshold": 0.86,
+  "ambiguity_margin": 0.08,
+  "alert_value": "50000",
+  "return_rate": "0.85",
+  "transfer_rate": "0.75",
+  "discount_rate": "0.50",
+  "scrap_rate": "0.05",
+  "handling_cost_per_unit": "1"
+}

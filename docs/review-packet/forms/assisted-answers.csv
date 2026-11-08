@@ -1,0 +1,4 @@
+case,canonical_sku,holding_ids,source_references,on_hand,target,obsolete_qty,excess_qty,eo_eur,open_po_qty,rank1_option,rank1_net_eur,review_disposition,reason,evidence_needed,owner
+accepted_scope,BEARING,,,,,,,,,,,,,,
+accepted_scope,BELT,,,,,,,,,,,,,,
+accepted_scope,CPU,,,,,,,,,,,,,,

@@ -1,0 +1,1665 @@
+{
+  "agent_framework": {
+    "agent_assessments": [
+      {
+        "agent": "retrieval",
+        "citations": [
+          "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+          "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+          "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+          "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+          "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+          "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+          "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+          "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+        ],
+        "disposition": "proceed",
+        "identity": "maf:retrieval",
+        "match_suggestions": [],
+        "rationale": "Only accepted rows continue; excluded rows require separate review.",
+        "reason_code": "partial_scope",
+        "receipt": "27141a65737e73eba8506e04156f0cbc745f2f3edc49a5e972f7e76aaebed238"
+      },
+      {
+        "agent": "sku-matching",
+        "citations": [
+          "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+          "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+          "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+          "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+          "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+          "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+          "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+          "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+        ],
+        "disposition": "proceed",
+        "identity": "maf:sku-matching",
+        "match_suggestions": [],
+        "rationale": "All records matched; no unresolved identities.",
+        "reason_code": "ready",
+        "receipt": "3f78111af166780e70ca034fe915b5380e27ba96930b8372060202a171598296"
+      },
+      {
+        "agent": "eo-calculation",
+        "citations": [
+          "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+          "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+          "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+          "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+          "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+          "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+          "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+          "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+        ],
+        "disposition": "proceed",
+        "identity": "maf:eo-calculation",
+        "match_suggestions": [],
+        "rationale": "Positions exist, baseline is comparable, and absolute variance is zero.",
+        "reason_code": "ready",
+        "receipt": "5f950ebbe944933e0db29e06504333c9ab88534ca94f66aaf8bb73af29c5ecaf"
+      },
+      {
+        "agent": "recommendation",
+        "citations": [
+          "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+          "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+          "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+          "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+          "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+          "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+          "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+          "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+        ],
+        "disposition": "proceed",
+        "identity": "maf:recommendation",
+        "match_suggestions": [],
+        "rationale": "There are 10 pending proposals and no non‑pending proposals, so the proposals are ready to be shown to a human for approval.",
+        "reason_code": "ready_for_approval",
+        "receipt": "21996342aeddd00a1f8db266a22bf47d1d868ec25914b75d38b8b13adecaa145"
+      }
+    ],
+    "identities": "configured IDs; tenant permissions and Agent 365 audit require independent verification",
+    "orchestration": "Microsoft Agent Framework WorkflowBuilder",
+    "provider": "ollama:gpt-oss:latest",
+    "tool_receipts": {
+      "eo-calculation": {
+        "handoff": {
+          "agent_id": "maf:eo-calculation",
+          "as_of_date": "2026-10-31",
+          "confidence": 1.0,
+          "exception_flags": [
+            "stale_or_future_snapshot"
+          ],
+          "input_version": "1",
+          "output_version": "1",
+          "payload": {
+            "positions": [
+              {
+                "canonical_sku": "BEARING",
+                "category": "general",
+                "description": "SKF 6205-2RSH",
+                "eo_quantity": "130",
+                "eo_value": "1560.00",
+                "excess_quantity": "130",
+                "inventory_value": "2400.00",
+                "max_age_days": 60,
+                "monthly_demand": "20",
+                "obsolete_quantity": "0",
+                "open_po_quantity": "5",
+                "quantity": "200",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                  "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+                ],
+                "target_stock": "70",
+                "unit_cost": "12"
+              },
+              {
+                "canonical_sku": "BELT",
+                "category": "general",
+                "description": "Gates 500-5M-15",
+                "eo_quantity": "30",
+                "eo_value": "600.00",
+                "excess_quantity": "30",
+                "inventory_value": "1000.00",
+                "max_age_days": 60,
+                "monthly_demand": "5",
+                "obsolete_quantity": "0",
+                "open_po_quantity": "0",
+                "quantity": "50",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+                ],
+                "target_stock": "20",
+                "unit_cost": "20"
+              },
+              {
+                "canonical_sku": "CPU",
+                "category": "general",
+                "description": "Siemens 6ES7214-1AG40-0XB0",
+                "eo_quantity": "10",
+                "eo_value": "1000.00",
+                "excess_quantity": "0",
+                "inventory_value": "1000.00",
+                "max_age_days": 1034,
+                "monthly_demand": "0",
+                "obsolete_quantity": "10",
+                "open_po_quantity": "0",
+                "quantity": "10",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+                ],
+                "target_stock": "0",
+                "unit_cost": "100"
+              }
+            ],
+            "reconciliation": {
+              "absolute_item_variance": "0.00",
+              "as_of_date": "2026-10-31",
+              "baseline_total": "3160.00",
+              "daily_total": "3160.00",
+              "rows": [
+                {
+                  "absolute_variance": "0.00",
+                  "baseline_value": "1560.00",
+                  "canonical_sku": "BEARING",
+                  "daily_value": "1560.00",
+                  "exception": null,
+                  "variance": "0.00",
+                  "variance_pct": "0.00"
+                },
+                {
+                  "absolute_variance": "0.00",
+                  "baseline_value": "600.00",
+                  "canonical_sku": "BELT",
+                  "daily_value": "600.00",
+                  "exception": null,
+                  "variance": "0.00",
+                  "variance_pct": "0.00"
+                },
+                {
+                  "absolute_variance": "0.00",
+                  "baseline_value": "1000.00",
+                  "canonical_sku": "CPU",
+                  "daily_value": "1000.00",
+                  "exception": null,
+                  "variance": "0.00",
+                  "variance_pct": "0.00"
+                }
+              ]
+            }
+          },
+          "run_id": "e57b01361f8104298b3e134f",
+          "source_references": [
+            "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+            "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+            "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+            "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+            "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+            "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+            "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+            "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+          ],
+          "status": "review_required"
+        },
+        "receipt": "5f950ebbe944933e0db29e06504333c9ab88534ca94f66aaf8bb73af29c5ecaf",
+        "stage_summary": {
+          "absolute_reconciliation_variance": "0.00",
+          "analysed_skus": 3,
+          "exceptions": [
+            "stale_or_future_snapshot"
+          ],
+          "reconciliation_status": "same_cutoff",
+          "status": "review_required"
+        }
+      },
+      "recommendation": {
+        "handoff": {
+          "agent_id": "maf:recommendation",
+          "as_of_date": "2026-10-31",
+          "confidence": 1.0,
+          "exception_flags": [
+            "stale_or_future_snapshot"
+          ],
+          "input_version": "1",
+          "output_version": "1",
+          "payload": {
+            "recommendations": [
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.85"
+                },
+                "canonical_sku": "BEARING",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "1196.00",
+                "explanation": "130 at-risk units; supplier_return subject to feasibility confirmation",
+                "option": "supplier_return",
+                "quantity": "130",
+                "rank": 1,
+                "realized_cash": "0",
+                "recommendation_id": "3daaa3cd4626d938429d0fc7",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                  "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.75"
+                },
+                "canonical_sku": "BEARING",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "1040.00",
+                "explanation": "130 at-risk units; transfer subject to feasibility confirmation",
+                "option": "transfer",
+                "quantity": "130",
+                "rank": 2,
+                "realized_cash": "0",
+                "recommendation_id": "584bd0d3ff6b69c25003ac53",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                  "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.50"
+                },
+                "canonical_sku": "BEARING",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "650.00",
+                "explanation": "130 at-risk units; discount subject to feasibility confirmation",
+                "option": "discount",
+                "quantity": "130",
+                "rank": 3,
+                "realized_cash": "0",
+                "recommendation_id": "7ad46d62a430eeaaa3bef409",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                  "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.05"
+                },
+                "canonical_sku": "BEARING",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "0.00",
+                "explanation": "130 at-risk units; scrap subject to feasibility confirmation",
+                "option": "scrap",
+                "quantity": "130",
+                "rank": 4,
+                "realized_cash": "0",
+                "recommendation_id": "c941fc46b32fcfec8ce00440",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                  "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.85"
+                },
+                "canonical_sku": "BELT",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "480.00",
+                "explanation": "30 at-risk units; supplier_return subject to feasibility confirmation",
+                "option": "supplier_return",
+                "quantity": "30",
+                "rank": 1,
+                "realized_cash": "0",
+                "recommendation_id": "6d1b546736047f0a3750ecfc",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.75"
+                },
+                "canonical_sku": "BELT",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "420.00",
+                "explanation": "30 at-risk units; transfer subject to feasibility confirmation",
+                "option": "transfer",
+                "quantity": "30",
+                "rank": 2,
+                "realized_cash": "0",
+                "recommendation_id": "7255b6be2e8eee7e19173978",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.50"
+                },
+                "canonical_sku": "BELT",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "270.00",
+                "explanation": "30 at-risk units; discount subject to feasibility confirmation",
+                "option": "discount",
+                "quantity": "30",
+                "rank": 3,
+                "realized_cash": "0",
+                "recommendation_id": "13a769819d117cbd51584be7",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.05"
+                },
+                "canonical_sku": "BELT",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "0.00",
+                "explanation": "30 at-risk units; scrap subject to feasibility confirmation",
+                "option": "scrap",
+                "quantity": "30",
+                "rank": 4,
+                "realized_cash": "0",
+                "recommendation_id": "7f488fb529783dc5fbf1d167",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.85"
+                },
+                "canonical_sku": "CPU",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "840.00",
+                "explanation": "10 at-risk units; supplier_return subject to feasibility confirmation",
+                "option": "supplier_return",
+                "quantity": "10",
+                "rank": 1,
+                "realized_cash": "0",
+                "recommendation_id": "72fc58a7880b3812c64f39d2",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+                ]
+              },
+              {
+                "approval_state": "pending",
+                "assumptions": {
+                  "economics": "Illustrative, validate with business owner",
+                  "handling_per_unit": "1",
+                  "recovery_rate": "0.05"
+                },
+                "canonical_sku": "CPU",
+                "constraints": [
+                  "Human approval required",
+                  "ERP execution remains manual",
+                  "Confirm destination demand for transfers and supplier acceptance for returns"
+                ],
+                "estimated_release": "40.00",
+                "explanation": "10 at-risk units; scrap subject to feasibility confirmation",
+                "option": "scrap",
+                "quantity": "10",
+                "rank": 2,
+                "realized_cash": "0",
+                "recommendation_id": "007856215ed1ddc351a85558",
+                "rule_version": "sample-policy-v1",
+                "source_references": [
+                  "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+                ]
+              }
+            ]
+          },
+          "run_id": "e57b01361f8104298b3e134f",
+          "source_references": [
+            "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+            "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+            "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+            "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+            "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+            "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+            "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+            "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+          ],
+          "status": "review_required"
+        },
+        "receipt": "21996342aeddd00a1f8db266a22bf47d1d868ec25914b75d38b8b13adecaa145",
+        "stage_summary": {
+          "all_proposals_pending": true,
+          "exceptions": [
+            "stale_or_future_snapshot"
+          ],
+          "execution_available": false,
+          "proposals": 10,
+          "status": "review_required"
+        }
+      },
+      "retrieval": {
+        "handoff": {
+          "agent_id": "maf:retrieval",
+          "as_of_date": "2026-10-31",
+          "confidence": 1.0,
+          "exception_flags": [
+            "stale_or_future_snapshot"
+          ],
+          "input_version": "1",
+          "output_version": "1",
+          "payload": {
+            "accepted": 4,
+            "quarantined": 1
+          },
+          "run_id": "e57b01361f8104298b3e134f",
+          "source_references": [
+            "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+            "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+            "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+            "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+            "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+            "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+            "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+            "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+          ],
+          "status": "review_required"
+        },
+        "receipt": "27141a65737e73eba8506e04156f0cbc745f2f3edc49a5e972f7e76aaebed238",
+        "stage_summary": {
+          "accepted": 4,
+          "exceptions": [
+            "stale_or_future_snapshot"
+          ],
+          "quarantined": 1,
+          "status": "review_required"
+        }
+      },
+      "sku-matching": {
+        "handoff": {
+          "agent_id": "maf:sku-matching",
+          "as_of_date": "2026-10-31",
+          "confidence": 1.0,
+          "exception_flags": [
+            "stale_or_future_snapshot"
+          ],
+          "input_version": "1",
+          "output_version": "1",
+          "payload": {
+            "crosswalk": [
+              {
+                "canonical_sku": "BEARING",
+                "confidence": 1.0,
+                "crosswalk_version": "1",
+                "method": "manufacturer_and_mpn",
+                "source_reference": "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+                "source_sku": "NL-01-01-1",
+                "source_system": "ERP-SYNTHETIC"
+              },
+              {
+                "canonical_sku": "BEARING",
+                "confidence": 1.0,
+                "crosswalk_version": "1",
+                "method": "manufacturer_and_mpn",
+                "source_reference": "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1",
+                "source_sku": "NL-01-01-1",
+                "source_system": "ERP-SYNTHETIC"
+              },
+              {
+                "canonical_sku": "BELT",
+                "confidence": 1.0,
+                "crosswalk_version": "1",
+                "method": "manufacturer_and_mpn",
+                "source_reference": "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1",
+                "source_sku": "NL-04-02-1",
+                "source_system": "ERP-SYNTHETIC"
+              },
+              {
+                "canonical_sku": "CPU",
+                "confidence": 1.0,
+                "crosswalk_version": "1",
+                "method": "manufacturer_and_mpn",
+                "source_reference": "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1",
+                "source_sku": "NL-07-03-1",
+                "source_system": "ERP-SYNTHETIC"
+              }
+            ],
+            "scorecard": {
+              "false_negative": 0,
+              "false_positive": 0,
+              "limitation": "Synthetic labelled sample; not evidence of production accuracy.",
+              "precision": 1.0,
+              "recall": 1.0,
+              "sample_size": 4,
+              "true_negative": 1,
+              "true_positive": 3
+            }
+          },
+          "run_id": "e57b01361f8104298b3e134f",
+          "source_references": [
+            "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+            "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+            "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+            "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+            "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+            "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+            "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+            "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+          ],
+          "status": "review_required"
+        },
+        "receipt": "3f78111af166780e70ca034fe915b5380e27ba96930b8372060202a171598296",
+        "stage_summary": {
+          "exceptions": [
+            "stale_or_future_snapshot"
+          ],
+          "matched": 4,
+          "minimum_match_confidence": 1.0,
+          "status": "review_required",
+          "unresolved": 0
+        }
+      }
+    }
+  },
+  "alerts": [],
+  "as_of_date": "2026-10-31",
+  "catalog": [],
+  "code_version": "inventorypulse-0.3.0",
+  "crosswalk": [
+    {
+      "canonical_sku": "BEARING",
+      "confidence": 1.0,
+      "crosswalk_version": "1",
+      "method": "manufacturer_and_mpn",
+      "source_reference": "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+      "source_sku": "NL-01-01-1",
+      "source_system": "ERP-SYNTHETIC"
+    },
+    {
+      "canonical_sku": "BEARING",
+      "confidence": 1.0,
+      "crosswalk_version": "1",
+      "method": "manufacturer_and_mpn",
+      "source_reference": "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1",
+      "source_sku": "NL-01-01-1",
+      "source_system": "ERP-SYNTHETIC"
+    },
+    {
+      "canonical_sku": "BELT",
+      "confidence": 1.0,
+      "crosswalk_version": "1",
+      "method": "manufacturer_and_mpn",
+      "source_reference": "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1",
+      "source_sku": "NL-04-02-1",
+      "source_system": "ERP-SYNTHETIC"
+    },
+    {
+      "canonical_sku": "CPU",
+      "confidence": 1.0,
+      "crosswalk_version": "1",
+      "method": "manufacturer_and_mpn",
+      "source_reference": "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1",
+      "source_sku": "NL-07-03-1",
+      "source_system": "ERP-SYNTHETIC"
+    }
+  ],
+  "data_mode": "synthetic",
+  "exceptions": [
+    {
+      "reason": "stale_or_future_snapshot",
+      "source_reference": "holdings.csv:row:6 + supplier_documents/001-table-01.md#NL-01-01-1",
+      "source_sku": "NL-01-01-1"
+    }
+  ],
+  "governance_mode": "MAF logical roles; tenant identity governance not independently verified",
+  "handoffs": [
+    {
+      "agent_id": "maf:retrieval",
+      "as_of_date": "2026-10-31",
+      "confidence": 1.0,
+      "exception_flags": [
+        "stale_or_future_snapshot"
+      ],
+      "input_version": "1",
+      "output_version": "1",
+      "payload": {
+        "accepted": 4,
+        "quarantined": 1
+      },
+      "run_id": "e57b01361f8104298b3e134f",
+      "source_references": [
+        "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+        "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+        "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+        "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+        "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+        "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+        "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+        "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+      ],
+      "status": "review_required"
+    },
+    {
+      "agent_id": "maf:sku-matching",
+      "as_of_date": "2026-10-31",
+      "confidence": 1.0,
+      "exception_flags": [
+        "stale_or_future_snapshot"
+      ],
+      "input_version": "1",
+      "output_version": "1",
+      "payload": {
+        "crosswalk": [
+          {
+            "canonical_sku": "BEARING",
+            "confidence": 1.0,
+            "crosswalk_version": "1",
+            "method": "manufacturer_and_mpn",
+            "source_reference": "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+            "source_sku": "NL-01-01-1",
+            "source_system": "ERP-SYNTHETIC"
+          },
+          {
+            "canonical_sku": "BEARING",
+            "confidence": 1.0,
+            "crosswalk_version": "1",
+            "method": "manufacturer_and_mpn",
+            "source_reference": "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1",
+            "source_sku": "NL-01-01-1",
+            "source_system": "ERP-SYNTHETIC"
+          },
+          {
+            "canonical_sku": "BELT",
+            "confidence": 1.0,
+            "crosswalk_version": "1",
+            "method": "manufacturer_and_mpn",
+            "source_reference": "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1",
+            "source_sku": "NL-04-02-1",
+            "source_system": "ERP-SYNTHETIC"
+          },
+          {
+            "canonical_sku": "CPU",
+            "confidence": 1.0,
+            "crosswalk_version": "1",
+            "method": "manufacturer_and_mpn",
+            "source_reference": "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1",
+            "source_sku": "NL-07-03-1",
+            "source_system": "ERP-SYNTHETIC"
+          }
+        ],
+        "scorecard": {
+          "examples": [
+            {
+              "canonical_sku": "BEARING",
+              "correct": true,
+              "description": "SKF 6205-2RSH",
+              "manufacturer": "SKF",
+              "manufacturer_part_number": "6205-2RSH",
+              "predicted": "BEARING",
+              "source_sku": "BEARING"
+            },
+            {
+              "canonical_sku": "BELT",
+              "correct": true,
+              "description": "Gates 500-5M-15",
+              "manufacturer": "Gates",
+              "manufacturer_part_number": "500-5M-15",
+              "predicted": "BELT",
+              "source_sku": "BELT"
+            },
+            {
+              "canonical_sku": "CPU",
+              "correct": true,
+              "description": "Siemens 6ES7214-1AG40-0XB0",
+              "manufacturer": "Siemens",
+              "manufacturer_part_number": "6ES7214-1AG40-0XB0",
+              "predicted": "CPU",
+              "source_sku": "CPU"
+            },
+            {
+              "canonical_sku": null,
+              "correct": true,
+              "description": "Uncatalogued",
+              "predicted": null,
+              "source_sku": "UNKNOWN"
+            }
+          ],
+          "false_negative": 0,
+          "false_positive": 0,
+          "limitation": "Synthetic labelled sample; not evidence of production accuracy.",
+          "precision": 1.0,
+          "recall": 1.0,
+          "sample_size": 4,
+          "true_negative": 1,
+          "true_positive": 3
+        }
+      },
+      "run_id": "e57b01361f8104298b3e134f",
+      "source_references": [
+        "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+        "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+        "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+        "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+        "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+        "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+        "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+        "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+      ],
+      "status": "review_required"
+    },
+    {
+      "agent_id": "maf:eo-calculation",
+      "as_of_date": "2026-10-31",
+      "confidence": 1.0,
+      "exception_flags": [
+        "stale_or_future_snapshot"
+      ],
+      "input_version": "1",
+      "output_version": "1",
+      "payload": {
+        "positions": [
+          {
+            "canonical_sku": "BEARING",
+            "category": "general",
+            "description": "SKF 6205-2RSH",
+            "eo_quantity": "130",
+            "eo_value": "1560.00",
+            "excess_quantity": "130",
+            "inventory_value": "2400.00",
+            "max_age_days": 60,
+            "monthly_demand": "20",
+            "obsolete_quantity": "0",
+            "open_po_quantity": "5",
+            "quantity": "200",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+              "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+            ],
+            "target_stock": "70",
+            "unit_cost": "12"
+          },
+          {
+            "canonical_sku": "BELT",
+            "category": "general",
+            "description": "Gates 500-5M-15",
+            "eo_quantity": "30",
+            "eo_value": "600.00",
+            "excess_quantity": "30",
+            "inventory_value": "1000.00",
+            "max_age_days": 60,
+            "monthly_demand": "5",
+            "obsolete_quantity": "0",
+            "open_po_quantity": "0",
+            "quantity": "50",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+            ],
+            "target_stock": "20",
+            "unit_cost": "20"
+          },
+          {
+            "canonical_sku": "CPU",
+            "category": "general",
+            "description": "Siemens 6ES7214-1AG40-0XB0",
+            "eo_quantity": "10",
+            "eo_value": "1000.00",
+            "excess_quantity": "0",
+            "inventory_value": "1000.00",
+            "max_age_days": 1034,
+            "monthly_demand": "0",
+            "obsolete_quantity": "10",
+            "open_po_quantity": "0",
+            "quantity": "10",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+            ],
+            "target_stock": "0",
+            "unit_cost": "100"
+          }
+        ],
+        "reconciliation": {
+          "absolute_item_variance": "0.00",
+          "as_of_date": "2026-10-31",
+          "baseline_total": "3160.00",
+          "daily_total": "3160.00",
+          "rows": [
+            {
+              "absolute_variance": "0.00",
+              "baseline_value": "1560.00",
+              "canonical_sku": "BEARING",
+              "daily_value": "1560.00",
+              "exception": null,
+              "variance": "0.00",
+              "variance_pct": "0.00"
+            },
+            {
+              "absolute_variance": "0.00",
+              "baseline_value": "600.00",
+              "canonical_sku": "BELT",
+              "daily_value": "600.00",
+              "exception": null,
+              "variance": "0.00",
+              "variance_pct": "0.00"
+            },
+            {
+              "absolute_variance": "0.00",
+              "baseline_value": "1000.00",
+              "canonical_sku": "CPU",
+              "daily_value": "1000.00",
+              "exception": null,
+              "variance": "0.00",
+              "variance_pct": "0.00"
+            }
+          ]
+        }
+      },
+      "run_id": "e57b01361f8104298b3e134f",
+      "source_references": [
+        "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+        "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+        "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+        "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+        "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+        "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+        "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+        "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+      ],
+      "status": "review_required"
+    },
+    {
+      "agent_id": "maf:recommendation",
+      "as_of_date": "2026-10-31",
+      "confidence": 1.0,
+      "exception_flags": [
+        "stale_or_future_snapshot"
+      ],
+      "input_version": "1",
+      "output_version": "1",
+      "payload": {
+        "recommendations": [
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.85"
+            },
+            "canonical_sku": "BEARING",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "1196.00",
+            "explanation": "130 at-risk units; supplier_return subject to feasibility confirmation",
+            "option": "supplier_return",
+            "quantity": "130",
+            "rank": 1,
+            "realized_cash": "0",
+            "recommendation_id": "3daaa3cd4626d938429d0fc7",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+              "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.75"
+            },
+            "canonical_sku": "BEARING",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "1040.00",
+            "explanation": "130 at-risk units; transfer subject to feasibility confirmation",
+            "option": "transfer",
+            "quantity": "130",
+            "rank": 2,
+            "realized_cash": "0",
+            "recommendation_id": "584bd0d3ff6b69c25003ac53",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+              "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.50"
+            },
+            "canonical_sku": "BEARING",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "650.00",
+            "explanation": "130 at-risk units; discount subject to feasibility confirmation",
+            "option": "discount",
+            "quantity": "130",
+            "rank": 3,
+            "realized_cash": "0",
+            "recommendation_id": "7ad46d62a430eeaaa3bef409",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+              "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.05"
+            },
+            "canonical_sku": "BEARING",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "0.00",
+            "explanation": "130 at-risk units; scrap subject to feasibility confirmation",
+            "option": "scrap",
+            "quantity": "130",
+            "rank": 4,
+            "realized_cash": "0",
+            "recommendation_id": "c941fc46b32fcfec8ce00440",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+              "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.85"
+            },
+            "canonical_sku": "BELT",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "480.00",
+            "explanation": "30 at-risk units; supplier_return subject to feasibility confirmation",
+            "option": "supplier_return",
+            "quantity": "30",
+            "rank": 1,
+            "realized_cash": "0",
+            "recommendation_id": "6d1b546736047f0a3750ecfc",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.75"
+            },
+            "canonical_sku": "BELT",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "420.00",
+            "explanation": "30 at-risk units; transfer subject to feasibility confirmation",
+            "option": "transfer",
+            "quantity": "30",
+            "rank": 2,
+            "realized_cash": "0",
+            "recommendation_id": "7255b6be2e8eee7e19173978",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.50"
+            },
+            "canonical_sku": "BELT",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "270.00",
+            "explanation": "30 at-risk units; discount subject to feasibility confirmation",
+            "option": "discount",
+            "quantity": "30",
+            "rank": 3,
+            "realized_cash": "0",
+            "recommendation_id": "13a769819d117cbd51584be7",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.05"
+            },
+            "canonical_sku": "BELT",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "0.00",
+            "explanation": "30 at-risk units; scrap subject to feasibility confirmation",
+            "option": "scrap",
+            "quantity": "30",
+            "rank": 4,
+            "realized_cash": "0",
+            "recommendation_id": "7f488fb529783dc5fbf1d167",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.85"
+            },
+            "canonical_sku": "CPU",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "840.00",
+            "explanation": "10 at-risk units; supplier_return subject to feasibility confirmation",
+            "option": "supplier_return",
+            "quantity": "10",
+            "rank": 1,
+            "realized_cash": "0",
+            "recommendation_id": "72fc58a7880b3812c64f39d2",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+            ]
+          },
+          {
+            "approval_state": "pending",
+            "assumptions": {
+              "economics": "Illustrative, validate with business owner",
+              "handling_per_unit": "1",
+              "recovery_rate": "0.05"
+            },
+            "canonical_sku": "CPU",
+            "constraints": [
+              "Human approval required",
+              "ERP execution remains manual",
+              "Confirm destination demand for transfers and supplier acceptance for returns"
+            ],
+            "estimated_release": "40.00",
+            "explanation": "10 at-risk units; scrap subject to feasibility confirmation",
+            "option": "scrap",
+            "quantity": "10",
+            "rank": 2,
+            "realized_cash": "0",
+            "recommendation_id": "007856215ed1ddc351a85558",
+            "rule_version": "sample-policy-v1",
+            "source_references": [
+              "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+            ]
+          }
+        ]
+      },
+      "run_id": "e57b01361f8104298b3e134f",
+      "source_references": [
+        "sku_master.json#sha256:e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+        "holdings.csv#sha256:5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+        "labels.json#sha256:6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+        "legacy_baseline.json#sha256:4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+        "supplier_documents/001-table-01.md#sha256:0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+        "supplier_documents/002-card-01.md#sha256:ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+        "supplier_documents/003-quote-01.md#sha256:e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+        "supplier_extraction#sha256:dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+      ],
+      "status": "review_required"
+    }
+  ],
+  "policy": {
+    "alert_value": "50000",
+    "ambiguity_margin": 0.08,
+    "discount_rate": "0.50",
+    "handling_cost_per_unit": "1",
+    "horizon_months": "3",
+    "match_threshold": 0.86,
+    "max_feed_age_days": 1,
+    "obsolete_after_days": 365,
+    "return_rate": "0.85",
+    "scrap_rate": "0.05",
+    "transfer_rate": "0.75",
+    "version": "sample-policy-v1"
+  },
+  "positions": [
+    {
+      "canonical_sku": "BEARING",
+      "category": "general",
+      "description": "SKF 6205-2RSH",
+      "eo_quantity": "130",
+      "eo_value": "1560.00",
+      "excess_quantity": "130",
+      "inventory_value": "2400.00",
+      "max_age_days": 60,
+      "monthly_demand": "20",
+      "obsolete_quantity": "0",
+      "open_po_quantity": "5",
+      "quantity": "200",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+        "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+      ],
+      "target_stock": "70",
+      "unit_cost": "12"
+    },
+    {
+      "canonical_sku": "BELT",
+      "category": "general",
+      "description": "Gates 500-5M-15",
+      "eo_quantity": "30",
+      "eo_value": "600.00",
+      "excess_quantity": "30",
+      "inventory_value": "1000.00",
+      "max_age_days": 60,
+      "monthly_demand": "5",
+      "obsolete_quantity": "0",
+      "open_po_quantity": "0",
+      "quantity": "50",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+      ],
+      "target_stock": "20",
+      "unit_cost": "20"
+    },
+    {
+      "canonical_sku": "CPU",
+      "category": "general",
+      "description": "Siemens 6ES7214-1AG40-0XB0",
+      "eo_quantity": "10",
+      "eo_value": "1000.00",
+      "excess_quantity": "0",
+      "inventory_value": "1000.00",
+      "max_age_days": 1034,
+      "monthly_demand": "0",
+      "obsolete_quantity": "10",
+      "open_po_quantity": "0",
+      "quantity": "10",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+      ],
+      "target_stock": "0",
+      "unit_cost": "100"
+    }
+  ],
+  "recommendations": [
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.85"
+      },
+      "canonical_sku": "BEARING",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "1196.00",
+      "explanation": "130 at-risk units; supplier_return subject to feasibility confirmation",
+      "option": "supplier_return",
+      "quantity": "130",
+      "rank": 1,
+      "realized_cash": "0",
+      "recommendation_id": "3daaa3cd4626d938429d0fc7",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+        "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.75"
+      },
+      "canonical_sku": "BEARING",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "1040.00",
+      "explanation": "130 at-risk units; transfer subject to feasibility confirmation",
+      "option": "transfer",
+      "quantity": "130",
+      "rank": 2,
+      "realized_cash": "0",
+      "recommendation_id": "584bd0d3ff6b69c25003ac53",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+        "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.50"
+      },
+      "canonical_sku": "BEARING",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "650.00",
+      "explanation": "130 at-risk units; discount subject to feasibility confirmation",
+      "option": "discount",
+      "quantity": "130",
+      "rank": 3,
+      "realized_cash": "0",
+      "recommendation_id": "7ad46d62a430eeaaa3bef409",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+        "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.05"
+      },
+      "canonical_sku": "BEARING",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "0.00",
+      "explanation": "130 at-risk units; scrap subject to feasibility confirmation",
+      "option": "scrap",
+      "quantity": "130",
+      "rank": 4,
+      "realized_cash": "0",
+      "recommendation_id": "c941fc46b32fcfec8ce00440",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:2 + supplier_documents/001-table-01.md#NL-01-01-1",
+        "holdings.csv:row:3 + supplier_documents/001-table-01.md#NL-01-01-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.85"
+      },
+      "canonical_sku": "BELT",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "480.00",
+      "explanation": "30 at-risk units; supplier_return subject to feasibility confirmation",
+      "option": "supplier_return",
+      "quantity": "30",
+      "rank": 1,
+      "realized_cash": "0",
+      "recommendation_id": "6d1b546736047f0a3750ecfc",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.75"
+      },
+      "canonical_sku": "BELT",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "420.00",
+      "explanation": "30 at-risk units; transfer subject to feasibility confirmation",
+      "option": "transfer",
+      "quantity": "30",
+      "rank": 2,
+      "realized_cash": "0",
+      "recommendation_id": "7255b6be2e8eee7e19173978",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.50"
+      },
+      "canonical_sku": "BELT",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "270.00",
+      "explanation": "30 at-risk units; discount subject to feasibility confirmation",
+      "option": "discount",
+      "quantity": "30",
+      "rank": 3,
+      "realized_cash": "0",
+      "recommendation_id": "13a769819d117cbd51584be7",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.05"
+      },
+      "canonical_sku": "BELT",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "0.00",
+      "explanation": "30 at-risk units; scrap subject to feasibility confirmation",
+      "option": "scrap",
+      "quantity": "30",
+      "rank": 4,
+      "realized_cash": "0",
+      "recommendation_id": "7f488fb529783dc5fbf1d167",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:4 + supplier_documents/002-card-01.md#NL-04-02-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.85"
+      },
+      "canonical_sku": "CPU",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "840.00",
+      "explanation": "10 at-risk units; supplier_return subject to feasibility confirmation",
+      "option": "supplier_return",
+      "quantity": "10",
+      "rank": 1,
+      "realized_cash": "0",
+      "recommendation_id": "72fc58a7880b3812c64f39d2",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+      ]
+    },
+    {
+      "approval_state": "pending",
+      "assumptions": {
+        "economics": "Illustrative, validate with business owner",
+        "handling_per_unit": "1",
+        "recovery_rate": "0.05"
+      },
+      "canonical_sku": "CPU",
+      "constraints": [
+        "Human approval required",
+        "ERP execution remains manual",
+        "Confirm destination demand for transfers and supplier acceptance for returns"
+      ],
+      "estimated_release": "40.00",
+      "explanation": "10 at-risk units; scrap subject to feasibility confirmation",
+      "option": "scrap",
+      "quantity": "10",
+      "rank": 2,
+      "realized_cash": "0",
+      "recommendation_id": "007856215ed1ddc351a85558",
+      "rule_version": "sample-policy-v1",
+      "source_references": [
+        "holdings.csv:row:5 + supplier_documents/003-quote-01.md#NL-07-03-1"
+      ]
+    }
+  ],
+  "reconciliation": {
+    "absolute_item_variance": "0.00",
+    "as_of_date": "2026-10-31",
+    "baseline_total": "3160.00",
+    "daily_total": "3160.00",
+    "rows": [
+      {
+        "absolute_variance": "0.00",
+        "baseline_value": "1560.00",
+        "canonical_sku": "BEARING",
+        "daily_value": "1560.00",
+        "exception": null,
+        "variance": "0.00",
+        "variance_pct": "0.00"
+      },
+      {
+        "absolute_variance": "0.00",
+        "baseline_value": "600.00",
+        "canonical_sku": "BELT",
+        "daily_value": "600.00",
+        "exception": null,
+        "variance": "0.00",
+        "variance_pct": "0.00"
+      },
+      {
+        "absolute_variance": "0.00",
+        "baseline_value": "1000.00",
+        "canonical_sku": "CPU",
+        "daily_value": "1000.00",
+        "exception": null,
+        "variance": "0.00",
+        "variance_pct": "0.00"
+      }
+    ]
+  },
+  "run_id": "e57b01361f8104298b3e134f",
+  "scorecard": {
+    "examples": [
+      {
+        "canonical_sku": "BEARING",
+        "correct": true,
+        "description": "SKF 6205-2RSH",
+        "manufacturer": "SKF",
+        "manufacturer_part_number": "6205-2RSH",
+        "predicted": "BEARING",
+        "source_sku": "BEARING"
+      },
+      {
+        "canonical_sku": "BELT",
+        "correct": true,
+        "description": "Gates 500-5M-15",
+        "manufacturer": "Gates",
+        "manufacturer_part_number": "500-5M-15",
+        "predicted": "BELT",
+        "source_sku": "BELT"
+      },
+      {
+        "canonical_sku": "CPU",
+        "correct": true,
+        "description": "Siemens 6ES7214-1AG40-0XB0",
+        "manufacturer": "Siemens",
+        "manufacturer_part_number": "6ES7214-1AG40-0XB0",
+        "predicted": "CPU",
+        "source_sku": "CPU"
+      },
+      {
+        "canonical_sku": null,
+        "correct": true,
+        "description": "Uncatalogued",
+        "predicted": null,
+        "source_sku": "UNKNOWN"
+      }
+    ],
+    "false_negative": 0,
+    "false_positive": 0,
+    "limitation": "Synthetic labelled sample; not evidence of production accuracy.",
+    "precision": 1.0,
+    "recall": 1.0,
+    "sample_size": 4,
+    "true_negative": 1,
+    "true_positive": 3
+  },
+  "source_fingerprints": {
+    "holdings.csv": "5f42b5e4c4dc3d488c47ba597ce0390c8c45ee4bc1e7bd2cbfdbf11e57e254bd",
+    "labels.json": "6c7f89f0facdb270fd7c0866a63d3778bf1a106884b8176ad432cfac7e07d587",
+    "legacy_baseline.json": "4573ee6d71c46a2d12195bdace928cfb36217250ff77bc6aba21b6d81731ab59",
+    "sku_master.json": "e791c71947588fec95c4928cd99e208eef94ff503197a0a205926a2acff1d169",
+    "supplier_documents/001-table-01.md": "0c4d2ed4367db2e8b5cecb0372ab407f1c7687cf8241b61366bca1a27a14cd52",
+    "supplier_documents/002-card-01.md": "ba752b745a7ea1d0f439fb71e13466cbe173f61a4489c9a3dc3d912ba0cd6b15",
+    "supplier_documents/003-quote-01.md": "e76b2819750367c588fcce485105b1dab63da44862ab79fd5acf92ae80b2ee28",
+    "supplier_extraction": "dfce83068e56a76e0208c2d4a0c36b2c0669628e0330ab05a463a88fd4b1c24a"
+  },
+  "source_run_id": "525214c716afa59b12e73248",
+  "summary": {
+    "analysed_skus": 3,
+    "approved_release": "0",
+    "eo_pct": "71.82",
+    "eo_value": "3160.00",
+    "estimated_release": "2516.00",
+    "exceptions": 1,
+    "inventory_value": "4400.00",
+    "realized_cash": 0
+  },
+  "weekly_reports": {
+    "finance": "E&O exposure 3,160.00; estimated net recovery 2,516.00. Approved and realized values are separate; no savings booked.",
+    "inventory_operations": "E&O 3,160.00; 1 exceptions. Review at-risk stock and unresolved matches.",
+    "procurement": "Review 5 open PO units against excess positions; no automatic cancellation."
+  },
+  "decisions": []
+}
